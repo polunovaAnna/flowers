@@ -12,7 +12,7 @@ export function FlowerCard({ flower, priority = false }) {
             <div className="flower-card__body">
                 <h3 className="flower-card__name">{name}</h3>
                 <p className="flower-card__meaning">{meaning}</p>
-                <p className="flowers-card__price">{price}</p>
+                <p className="flowers-card__price">{price} грн</p>
             </div>
         </article>
     )
