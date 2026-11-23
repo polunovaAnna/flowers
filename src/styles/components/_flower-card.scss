@@ -1,0 +1,61 @@
+@use '../variables' as *;
+
+.flower-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    overflow: hidden;
+    transition: border-color $transition-base;
+
+    &:hover {
+        border-color: $color-button-highlight;
+    }
+
+    &__photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: $space-2;
+        padding: $space-3;
+    }
+
+    &__name {
+        margin: 0;
+        font-family: $font-heading;
+        font-size: $text-lg;
+        color: $color-text;
+    }
+
+    &__meaning {
+        margin: 0;
+        font-size: $text-sm;
+        color: $color-text-secondary;
+    }
+
+    &__price {
+        margin: 0;
+        font-weight: 700;
+        color: $color-text;
+    }
+}
+
+@media (max-width: #{$breakpoint-tablet - 1px}) {
+    .flower-card {
+        &__body {
+            padding: $space-2;
+        }
+
+        &__name {
+            font-size: $text-base;
+        }
+    }
+}

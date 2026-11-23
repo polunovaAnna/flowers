@@ -1,0 +1,100 @@
+@use '../variables' as *;
+
+$thumb-size: 20px;
+
+.price-range {
+    &__label {
+        margin: 0 0 $space-3;
+        font-size: $text-base;
+        color: $color-text;
+    }
+
+    &__slider {
+        position: relative;
+        height: $thumb-size;
+        user-select: none;
+        touch-action: none;
+    }
+
+    &__rail {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: $thumb-size * 0.5;
+        right: $thumb-size * 0.5;
+    }
+
+    &__track,
+    &__fill {
+        position: absolute;
+        top: 50%;
+        height: 4px;
+        transform: translateY(-50%);
+        border-radius: 2px;
+    }
+
+    &__track {
+        left: 0;
+        right: 0;
+        background: $color-border;
+        opacity: 0.4;
+    }
+
+    &__fill {
+        background: $color-accent-deep;
+    }
+
+    &__input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        margin: 0;
+        background: transparent;
+        pointer-events: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &::-webkit-slider-runnable-track {
+            height: $thumb-size;
+            background: transparent;
+        }
+
+        &::-moz-range-track {
+            height: $thumb-size;
+            background: transparent;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: $thumb-size;
+            height: $thumb-size;
+            border: 2px solid $color-accent-deep;
+            border-radius: 50%;
+            background: $color-surface;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        &::-moz-range-thumb {
+            width: $thumb-size - 4px;
+            height: $thumb-size - 4px;
+            border: 2px solid $color-accent-deep;
+            border-radius: 50%;
+            background: $color-surface;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        &:active::-webkit-slider-thumb {
+            border-color: $color-button-highlight;
+        }
+
+        &:active::-moz-range-thumb {
+            border-color: $color-button-highlight;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}

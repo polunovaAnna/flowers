@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+.contacts-page {
+    &__layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space-4;
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .contacts-page__layout {
+        grid-template-columns: 280px 1fr;
+        align-items: start;
+    }
+}

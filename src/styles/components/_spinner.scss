@@ -1,0 +1,35 @@
+@use '../variables' as *;
+
+.spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-3;
+    padding: $space-5 0;
+    color: $color-text-secondary;
+
+    &__circle {
+        width: 40px;
+        height: 40px;
+        border: 4px solid $color-accent;
+        border-top-color: $color-accent-deep;
+        border-radius: 50%;
+        animation: spinner-rotate 0.9s linear infinite;
+    }
+
+    &__label {
+        font-size: $text-base;
+    }
+}
+
+@keyframes spinner-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spinner__circle {
+        animation-duration: 3s;
+    }
+}

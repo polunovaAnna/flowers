@@ -1,0 +1,196 @@
+@use '../variables' as *;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height;
+    padding: 0 $space-4;
+    background: $color-surface;
+    border-bottom: 1px solid $color-border;
+    position: relative;
+    z-index: 20;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: $space-2;
+        color: $color-text;
+        text-decoration: none;
+    }
+
+    &__logo-img {
+        height: 40px;
+        width: auto;
+    }
+
+    &__logo-text {
+        font-family: $font-heading;
+        font-size: $text-xl;
+    }
+
+    &__list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item+&__item {
+        border-left: 1px solid $color-border;
+    }
+
+    &__link {
+        display: block;
+        padding: $space-2 $space-4;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        text-decoration: none;
+        transition: color $transition-base;
+
+        &:hover {
+            color: $color-button-highlight;
+        }
+
+        &.active {
+            color: $color-accent-deep;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__item:hover>&__submenu,
+    &__item:focus-within>&__submenu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__item--suppressed>&__submenu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 100%;
+        margin: 0;
+        padding: $space-2 0;
+        list-style: none;
+        background: $color-surface;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transition-base, visibility $transition-base;
+    }
+
+    &__sublink {
+        display: block;
+        padding: $space-2 $space-4;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        text-decoration: none;
+        transition: color $transition-base;
+
+        &:hover {
+            color: $color-button-highlight;
+        }
+        
+        &.active {
+            color: $color-accent-deep;
+        }
+        
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: -2px;
+        }
+    }
+
+    &__burger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 0 10px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+    
+    &__burger-line {
+        display: block;
+        height: 2px;
+        background: $color-text;
+    }
+}
+
+@media (max-width: #{$breakpoint-tablet - 1px}) {
+    .header {
+        position: relative;
+        padding: 0 $space-3;
+
+        &__burger {
+            display: flex;
+        }
+
+        &__nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: $color-surface;
+            border-bottom: 1px solid $color-border;
+
+            &--open {
+                display: block;
+            }
+        }
+
+        &__list {
+            flex-direction: column;
+        }
+
+        &__item+&__item {
+            border-left: 0;
+            border-top: 1px solid $color-border;
+        }
+
+        &__link {
+            padding: $space-3;
+        }
+
+        &__submenu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+        }
+
+        &__sublink {
+            padding: $space-2 $space-3 $space-2 $space-5;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+.salon-map {
+    &__canvas {
+        width: 100%;
+        height: 360px;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        z-index: 0;
+    }
+
+    &__error {
+        margin: $space-2 0 0;
+        color: $color-error;
+    }
+}

@@ -1,0 +1,148 @@
+@use '../variables' as *;
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: $slider-height-inner;
+    overflow: hidden;
+
+    &--home {
+        height: $slider-height-home;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba($color-text, 0.5);
+        pointer-events: none;
+    }
+
+    &__track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease;
+    }
+
+    &__image {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border: 1px solid $color-border;
+        border-radius: 50%;
+        background: $color-surface;
+        color: $color-text;
+        font-size: $text-lg;
+        line-height: 1;
+        cursor: pointer;
+        transition: border-color $transition-base;
+
+        &:hover {
+            border-color: $color-button-highlight;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+
+        &--prev {
+            left: $space-3;
+        }
+
+        &--next {
+            right: $space-3;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        bottom: $space-2;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: $space-2;
+    }
+
+    &__dot {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: 1px solid $color-button-highlight;
+        border-radius: 50%;
+        background: $color-surface;
+        cursor: pointer;
+
+        &--active {
+            background: $color-button-highlight;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+
+    &__hero {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $space-3;
+        padding: 0 $space-5;
+        text-align: center;
+        pointer-events: none;
+    }
+    
+    &__slogan {
+        margin: 0;
+        font-family: $font-heading;
+        font-size: $text-3xl;
+        color: $color-bg;
+    }
+    
+    &__cta {
+        padding: $space-2 $space-4;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        text-decoration: none;
+        background: $color-button;
+        border: 2px solid transparent;
+        border-radius: $radius-sm;
+        pointer-events: auto;
+        transition: border-color $transition-base;
+    
+        &:hover {
+            border-color: $color-button-highlight;
+        }
+    
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+}
+
+@media (max-height: 700px) {
+    .slider--home {
+        height: $slider-height-inner;
+    }
+
+    .slider__slogan {
+        font-size: $text-xl;
+    }
+}

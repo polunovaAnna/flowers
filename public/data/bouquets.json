@@ -1,0 +1,38 @@
+[
+    {
+        "id": "tender-morning",
+        "name": "Ніжний ранок",
+        "description": "Легкий букет для невеликого свята",
+        "occasions": ["birthday", "congratulations"],
+        "photo": "/bouquets/tender-morning.webp",
+        "wrapperId": "white",
+        "items": [
+            { "flowerId": "pink-peony", "quantity": 5 }
+        ]
+    },
+    {
+        "id": "classic-love",
+        "name": "Класична любов",
+        "description": "Червоні троянди з білими акцентами",
+        "occasions": ["romance", "anniversary"],
+        "photo": "/bouquets/classic-love.webp",
+        "wrapperId": "none",
+        "items": [
+            { "flowerId": "red-rose", "quantity": 7 },
+            { "flowerId": "white-rose", "quantity": 5},
+            { "flowerId": "white-gypsophila", "quantity": 11}
+        ]
+    },
+    {
+        "id": "spring-sun",
+        "name": "Весняне сонце",
+        "description": "Троянди й ромашки для гарного настрою",
+        "occasions": ["spring", "just-because"],
+        "photo": "/bouquets/spring-sun.webp",
+        "wrapperId": "black",
+        "items": [
+            { "flowerId": "orange-rose", "quantity": 9 },
+            { "flowerId": "white-daisy", "quantity": 11 }
+        ]
+    }
+]

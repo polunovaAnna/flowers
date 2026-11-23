@@ -1,0 +1,67 @@
+@use 'sass:math';
+
+//color palette
+$cream: #fdeed9;
+$brown: #573c27;
+$mocha: #a98360;
+$mocha-dark: #7d5c3e;
+$sage: #c3cea1;
+$sage-deep: #606c38;
+$rose-soft: #ffadc6;
+$rose-bright: #e34989;
+$brick: #a3302a;
+
+$color-bg: $cream;
+$color-surface: #fffaf2;
+$color-text: $brown;
+$color-text-secondary: $mocha-dark; //small additional text
+$color-subheading: $mocha; //big subheaders
+$color-border: $mocha;
+$color-button: $rose-soft; //button bg
+$color-button-highlight: $rose-bright; //frame hover
+$color-accent: $sage;
+$color-accent-deep: $sage-deep; //text
+$color-error: $brick;
+
+//fonts
+$font-heading: 'Lora', Georgia, serif;
+$font-body: 'Mulish', system-ui, sans-serif;
+
+//Major Third (×1.25), base 16px
+$type-scale: 1.25;
+$text-sm: math.pow($type-scale, -1) * 1rem; // 0.8rem  ≈ 12.8px
+$text-base: 1rem; // 16px
+$text-lg: math.pow($type-scale, 1) * 1rem; // 1.25rem ≈ 20px
+$text-xl: math.pow($type-scale, 2) * 1rem; // ≈ 25px
+$text-2xl: math.pow($type-scale, 3) * 1rem; // ≈ 31px
+$text-3xl: math.pow($type-scale, 4) * 1rem; // ≈ 39px
+$text-4xl: math.pow($type-scale, 5) * 1rem; // ≈ 49px
+
+//padding
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 16px;
+$space-4: 24px;
+$space-5: 32px;
+
+//size
+$header-height: 64px;
+$container-max: 1200px;
+
+//breakpoint
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+//corners
+$radius-sm: 6px;
+$radius-md: 12px;
+
+//animations
+$transition-base: 0.25s ease;
+
+//focuss
+$color-focus: $sage-deep;
+
+//slider
+$slider-height-home: 280px;
+$slider-height-inner: 180px;

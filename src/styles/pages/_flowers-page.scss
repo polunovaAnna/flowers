@@ -1,0 +1,165 @@
+@use '../variables' as *;
+
+.flowers-page {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-3;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__search {
+        width: 220px;
+        max-width: 100%;
+        display: block;
+        padding: $space-2 $space-3;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        background: $color-surface;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        transition: width $transition-base, border-color $transition-base;
+    
+        &:hover,
+        &:focus {
+            width: 360px;
+            border-color: $color-button-highlight;
+        }
+    
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+
+    }
+
+    &__toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: $space-3;
+        margin-bottom: $space-4;
+    }
+    
+    &__layout {
+        display: flex;
+        flex-direction: column;
+        gap: $space-4;
+    }
+    
+    &__filters {
+        display: none;
+        flex-direction: column;
+        gap: $space-3;
+    
+        &--open {
+            display: flex;
+        }
+    }
+    
+    &__results {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__sort {
+        padding: $space-2 $space-3;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        background: $color-surface;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        transition: border-color $transition-base;
+
+        &:hover {
+            border-color: $color-button-highlight;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+
+    &__filter {
+        min-width: 0;
+        margin: 0;
+        padding: $space-3;
+        background: $color-surface;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+
+        legend {
+            padding: 0 $space-2;
+            font-family: $font-heading;
+            font-size: $text-lg;
+            color: $color-text;
+        }
+    }
+
+    &__filters-toggle {
+        padding: $space-2 $space-3;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        background: $color-button;
+        border: 1px solid transparent;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        transition: border-color $transition-base;
+    
+        &:hover {
+            border-color: $color-button-highlight;
+        }
+    
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        gap: $space-2;
+        padding: $space-1 0;
+        font-family: $font-body;
+        font-size: $text-base;
+        color: $color-text;
+        cursor: pointer;
+
+        input {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            accent-color: $color-accent-deep;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .flowers-page__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $space-4;
+    }
+
+    .flowers-page__layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .flowers-page__filters {
+        display: flex;
+        flex: 0 0 220px;
+    }
+
+    .flowers-page__filters-toggle {
+        display: none;
+    }
+}

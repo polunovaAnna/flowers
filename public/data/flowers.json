@@ -1,0 +1,101 @@
+[
+    {
+        "id": "white-rose",
+        "name": "Біла троянда",
+        "type": "rose",
+        "color": "white",
+        "price": 55,
+        "meaning": "Чистота, нові початки, щира повага",
+        "occasions": ["wedding", "anniversary", "gratitude"],
+        "photo": "/flowers/white-rose.webp",
+        "illustration": "/flowers_svg/white-rose.svg"
+    },
+    {
+        "id": "red-rose",
+        "name": "Червона троянда",
+        "type": "rose",
+        "color": "red",
+        "price": 60,
+        "meaning": "Кохання, пристрасть, глибока повага",
+        "occasions": ["romance", "anniversary", "birthday"],
+        "photo": "/flowers/red-rose.webp",
+        "illustration": "/flowers_svg/red-rose.svg"
+    },
+    {
+        "id": "white-daisy",
+        "name": "Біла ромашка",
+        "type": "daisy",
+        "color": "white",
+        "price": 25,
+        "meaning": "Простота, щирість, світла радість",
+        "occasions": ["birthday", "gratitude", "just-because"],
+        "photo": "/flowers/white-daisy.webp",
+        "illustration": "/flowers_svg/white-daisy.svg"
+    },
+    {
+        "id": "pink-peony",
+        "name": "Рожевий піон",
+        "type": "peony",
+        "color": "pink",
+        "price": 90,
+        "meaning": "Ніжність, процвітання, щасливий шлях",
+        "occasions": ["wedding", "birthday", "congratulations"],
+        "photo": "/flowers/pink-peony.webp",
+        "illustration": "/flowers_svg/pink-peony.svg"
+    },
+    {
+        "id": "yellow-tulip",
+        "name": "Жовтий тюльпан",
+        "type": "tulip",
+        "color": "yellow",
+        "price": 35,
+        "meaning": "Радість, сонячний настрій, побажання тепла",
+        "occasions": ["birthday", "spring", "just-because"],
+        "photo": "/flowers/yellow-tulip.webp",
+        "illustration": "/flowers_svg/yellow-tulip.svg"
+    },
+    {
+        "id": "orange-rose",
+        "name": "Помаранчева троянда",
+        "type": "rose",
+        "color": "orange",
+        "price": 60,
+        "meaning": "Захоплення, енергія, вдячність",
+        "occasions": ["birthday", "congratulations", "gratitude"],
+        "photo": "/flowers/orange-rose.webp",
+        "illustration": "/flowers_svg/orange-rose.svg"
+    },
+    {
+        "id": "white-calla",
+        "name": "Біла кала",
+        "type": "calla",
+        "color": "white",
+        "price": 75,
+        "meaning": "Елегантність, велична краса, чистота намірів",
+        "occasions": ["wedding", "anniversary", "congratulations"],
+        "photo": "/flowers/white-calla.webp",
+        "illustration": "/flowers_svg/white-calla-lily.svg"
+    },
+    {
+        "id": "white-daffodil",
+        "name": "Білий нарцис",
+        "type": "daffodil",
+        "color": "white",
+        "price": 30,
+        "meaning": "Нове життя, надія, початок весни",
+        "occasions": ["spring", "birthday", "just-because"],
+        "photo": "/flowers/white-daffodil.webp",
+        "illustration": "/flowers_svg/white-daffodil.svg"
+    },
+    {
+        "id": "white-gypsophila",
+        "name": "Біла гіпсофіла",
+        "type": "gtpsophila",
+        "color": "white",
+        "price": 20,
+        "meaning": "Легкість, ніжність, вічна прихильність",
+        "occasions": ["wedding", "gratitude", "just-because"],
+        "photo": "/flowers/white-gypsophila.webp",
+        "illustration": "/flowers_svg/white-gypsohila.svg"
+    }
+]

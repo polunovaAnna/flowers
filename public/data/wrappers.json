@@ -1,0 +1,23 @@
+[
+    {
+        "id": "none",
+        "name": "Без обгортки",
+        "price": 0,
+        "back": null,
+        "front": null
+    },
+    {
+        "id": "white",
+        "name": "Білий папір",
+        "price": 55,
+        "back": "/wrappers/cream-back.svg",
+        "front": "/wrappers/cream-front.svg"
+    },
+    {
+        "id": "black",
+        "name": "Чорний папір",
+        "price": 55,
+        "back": "/wrappers/cream-back.svg",
+        "front": "/wrappers/cream-front.svg"
+    }
+]

@@ -1,0 +1,102 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@use 'components/layout';
+@use 'components/header';
+@use 'components/slider';
+@use 'components/flower-card';
+@use 'components/price-range';
+@use 'components/pagination';
+@use 'components/spinner';
+@use 'components/bouquet-card';
+@use 'components/salon-map';
+@use 'components/contact-info';
+
+@use 'pages/flowers-page';
+@use 'pages/contacts-page';
+@use 'pages/home-page';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: $font-body;
+    line-height: 1.5;
+    color: $color-text;
+    background: $color-bg;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $font-heading;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: $text-4xl;
+    line-height: 1.15;
+
+    @include mobile {
+        font-size: $text-2xl;
+    }
+}
+
+h2 {
+    font-size: $text-3xl;
+    line-height: 1.2;
+
+    @include mobile {
+        font-size: $text-xl;
+    }
+}
+
+h3 {
+    font-size: $text-2xl;
+    line-height: 1.25;
+}
+
+h4 {
+    font-size: $text-xl;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 2px solid $color-focus;
+    outline-offset: 2px;
+}

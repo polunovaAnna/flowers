@@ -1,0 +1,48 @@
+@use '../variables' as *;
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+
+    &__title {
+        margin: 0 0 $space-1;
+        font-family: $font-heading;
+        font-size: $text-lg;
+        color: $color-text;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: $text-base;
+        color: $color-text;
+    }
+
+    &__link {
+        color: $color-accent-deep;
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+
+    &__hours {
+        display: flex;
+        flex-direction: column;
+        gap: $space-1;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            gap: $space-3;
+        }
+
+        span:first-child {
+            min-width: 56px;
+            color: $color-text-secondary;
+        }
+    }
+}

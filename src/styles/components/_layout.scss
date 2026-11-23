@@ -1,0 +1,32 @@
+@use '../variables' as *;
+
+.app-shell {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-top {
+    flex: 0 0 auto;
+}
+
+.app-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+}
+
+.app-scroll-area {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.app-main {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: $space-4 $space-3;
+}
