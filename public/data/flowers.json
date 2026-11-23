@@ -90,12 +90,45 @@
     {
         "id": "white-gypsophila",
         "name": "Біла гіпсофіла",
-        "type": "gtpsophila",
+        "type": "gypsophila",
         "color": "white",
         "price": 20,
         "meaning": "Легкість, ніжність, вічна прихильність",
         "occasions": ["wedding", "gratitude", "just-because"],
         "photo": "/flowers/white-gypsophila.webp",
-        "illustration": "/flowers_svg/white-gypsohila.svg"
+        "illustration": "/flowers_svg/white-gypsophila.svg"
+    },
+    {
+        "id": "pink-carnation",
+        "name": "Рожева гвоздика",
+        "type": "carnation",
+        "color": "pink",
+        "price": 35,
+        "meaning": "Щира прихильність, вдячність, ніжність",
+        "occasions": ["birthday", "gratitude", "just-because"],
+        "photo": "/flowers/pink-carnation.webp",
+        "illustration": "/flowers_svg/pink-carnation.svg"
+    },
+    {
+        "id": "eucalyptus",
+        "name": "Евкаліпт",
+        "type": "eucalyptus",
+        "color": "green",
+        "price": 40,
+        "meaning": "Свіжість, гармонія, природня легкість",
+        "occasions": ["wedding", "gratitude", "just-because"],
+        "photo": "/flowers/eucalyptus.webp",
+        "illustration": "/flowers_svg/eucalyptus.svg"
+    },
+    {
+        "id": "purple-eustoma",
+        "name": "Фіолетова еустома",
+        "type": "eustoma",
+        "color": "purple",
+        "price": 70,
+        "meaning": "Вишуканість, захоплення, особливий шарм",
+        "occasions": ["romance", "anniversary", "congratulations"],
+        "photo": "/flowers/purple-eustoma.webp",
+        "illustration": "/flowers_svg/purple-eustoma.svg"
     }
 ]
