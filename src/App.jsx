@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
+import { HomePage } from './pages/HomePage'
 import { FlowersPage } from './pages/FlowersPage';
 import { BouquetsPage } from './pages/BouquetsPage';
 import { BuilderPage } from './pages/BuilderPage';
