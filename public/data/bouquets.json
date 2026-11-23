@@ -34,5 +34,54 @@
             { "flowerId": "orange-rose", "quantity": 9 },
             { "flowerId": "white-daisy", "quantity": 11 }
         ]
+    },
+    {
+        "id": "sunny-trio",
+        "name": "Сонячне тріо",
+        "description": "Лаконічний весняний комплімент із жовтих тюльпанів",
+        "occasions": ["spring", "just-because", "gratitude"],
+        "photo": "/bouquets/sunny-trio.webp",
+        "wrapperId": "clear",
+        "items": [
+            {"flowerId": "yellow-tulip", "quantity": 3}
+        ]
+    },
+    {
+        "id": "first-breath",
+        "name": "Перший подих",
+        "description": "Об'ємний оберемок білих нарцисів у крафтовому папері",
+        "occasions": ["spring", "gratitude", "birthday"],
+        "photo": "/bouquets/first-breath.webp",
+        "wrapperId": "craft",
+        "items": [
+            {"flowerId": "white-daffodil", "quantity": 25}
+        ]
+    },
+    {
+        "id": "silk-harmony",
+        "name": "Шовкова гармонія",
+        "description": "Делікатний букет із білих троянд, рожевих гвоздик та свіжого евкаліпта",
+        "occasions": ["wedding", "anniversary", "romance"],
+        "photo": "/bouquets/silk-harmony.webp",
+        "wrapperId": "none",
+        "items": [
+            {"flowerId": "white-rose", "quantity": 7},
+            {"flowerId": "pink-carnation", "quantity": 9},
+            {"flowerId": "eucalyptus", "quantity": 5}
+        ]
+    },
+    {
+        "id": "velvet-evening",
+        "name": "Оксамитовий вечір",
+        "description": "Виразний букет із фіолетових еустом, білої гіпсофіли та свіжої зелені",
+        "occasions": ["congratulations", "anniversary", "birthday"],
+        "photo": "/bouquets/velvet-evening.webp",
+        "wrapperId": "none",
+        "items": [
+            {"flowerId": "purple-eustoma", "quantity": 9},
+            {"flowerId": "white-gypsophila", "quantity": 5},
+            {"flowerId": "white-daisy", "quantity": 1},
+            {"flowerId": "eucalyptus", "quantity": 3}
+        ]
     }
 ]
