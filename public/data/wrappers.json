@@ -10,14 +10,49 @@
         "id": "white",
         "name": "Білий папір",
         "price": 55,
-        "back": "/wrappers/cream-back.svg",
-        "front": "/wrappers/cream-front.svg"
+        "back": "/wrapper-svg/white-back.svg",
+        "front": "/wrapper-svg/white-front.svg"
     },
     {
         "id": "black",
         "name": "Чорний папір",
         "price": 55,
-        "back": "/wrappers/cream-back.svg",
-        "front": "/wrappers/cream-front.svg"
+        "back": "/wrapper-svg/black-back.svg",
+        "front": "/wrapper-svg/black-front.svg"
+    },
+    {
+        "id": "clear",
+        "name": "Прозора плівка",
+        "price": 40,
+        "back": "/wrapper-svg/plastic-back.svg,",
+        "front": "/wrapper-svg/plastic-front.svg"
+    },
+    {
+        "id": "craft",
+        "name": "Крафтовий папір",
+        "price": 50,
+        "back": "/wrapper-svg/craft-back.svg",
+        "front": "/wrapper-svg/craft-front.svg"
+    },
+    {
+        "id": "blush",
+        "name": "Пудровий папір тиш'ю",
+        "price": 60,
+        "back": "/wrapper-svg/pink-back.svg",
+        "front": "/wrapper-svg/pi-front.svg"
+    },
+    {
+        "id": "olive",
+        "name": "Оливкова матова плівка",
+        "price": 65,
+        "back": "/wrapper-svg/olive-back.svg",
+        "front": "/wrapper-svg/olive-front.svg"
+    },
+    {
+        "id": "burgundy",
+        "name": "Бордовий оксамитовий папір",
+        "price": 70,
+        "back": "/wrapper-svg/bordo-back.svg",
+        "front": "/wrapper-svg/bordo-front.svg"
     }
 ]
