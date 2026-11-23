@@ -2,17 +2,19 @@ export const COLOR_LABELS = {
 	white: "Білий",
 	red: "Червоний",
 	pink: "Рожевий",
-	yellow: "Жовтий",
 	orange: "Помаранчевий",
+	yellow: "Жовтий",
+	green: "Зелений",
+	purple: "Фіолетовий",
 };
 
 export const OCCASION_LABELS = {
 	wedding: "Весілля",
-	anniversary: "Річниця",
-	gratitude: "Подяка",
-	romance: "Романтика",
-	birthday: "День народження",
-	"just-because": "Просто так",
-	congratulations: "Вітання",
 	spring: "Весна",
+	congratulations: "Вітання",
+	birthday: "День народження",
+	gratitude: "Подяка",
+	"just-because": "Просто так",
+	anniversary: "Річниця",
+	romance: "Романтика",
 };
