@@ -36,10 +36,12 @@ export function BouquetsPage() {
         isMobile ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP
     );
 
-    const occasions = useMemo(
-        () => (bouquets ? [...new Set(bouquets.flatMap((b) => b.occasions))] : []),
-        [bouquets]
-    );
+    const occasions = useMemo(() => {
+        if (!bouquets) return [];
+        const available = new Set(bouquets.flatMap((b) => b.occasions));
+        return Object.keys(OCCASION_LABELS).filter((key) => available.has(key));
+    }, [bouquets]);
+
     const priceBounds = useMemo(() => {
         if (!bouquets || bouquets.length === 0) return { min: 0, max: 100 };
         const prices = bouquets.map((b) => b.price);

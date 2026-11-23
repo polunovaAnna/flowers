@@ -51,15 +51,17 @@ export function FlowersPage() {
         Object.values(selected).reduce((sum, values) => sum + values.length, 0) +
         (priceRange.min !== '' || priceRange.max !== '' ? 1 : 0);
 
-    const colors = useMemo(
-        () => (flowers ? [...new Set(flowers.map((f) => f.color))] : []),
-        [flowers]
-    );
+    const colors = useMemo(() => {
+        if (!flowers) return [];
+        const available = new Set(flowers.map((f) => f.color));
+        return Object.keys(COLOR_LABELS).filter((key) => available.has(key));
+    }, [flowers]);
 
-    const occasions = useMemo(
-        () => (flowers ? [...new Set(flowers.flatMap((f) => f.occasions))] : []),
-        [flowers]
-    );
+    const occasions = useMemo(() => {
+        if (!flowers) return [];
+        const available = new Set(flowers.flatMap((f) => f.occasions));
+        return Object.keys(OCCASION_LABELS).filter((key) => available.has(key));
+    }, [flowers]);
 
     const priceBounds = useMemo(() => {
         if (!flowers || flowers.length === 0) return { min: 0, max: 100 };
