@@ -29,4 +29,15 @@
     max-width: $container-max;
     margin: 0 auto;
     padding: $space-4 $space-3;
+    box-sizing: border-box;
+}
+
+@media (min-width: #{$breakpoint-tablet}) {
+    .app-scroll-area:has(.builder-page) {
+        overflow-y: hidden;
+    }
+
+    .app-main:has(.builder-page) {
+        height: 100%;
+    }
 }

@@ -12,6 +12,8 @@
 @use 'components/salon-map';
 @use 'components/contact-info';
 @use 'components/quantity-stepper';
+@use 'components/bouquet-preview';
+@use 'components/price-summary';
 
 @use 'pages/flowers-page';
 @use 'pages/contacts-page';
@@ -101,4 +103,15 @@ button {
 :focus-visible {
     outline: 2px solid $color-focus;
     outline-offset: 2px;
+}
+
+html,
+.app-scroll-area,
+.builder__flowers {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
