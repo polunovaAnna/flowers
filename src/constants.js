@@ -10,3 +10,4 @@ export const SALON = {
 
 export const MAP_ZOOM = 16;
 export const SLOGAN = "Квіти без поспіху";
+export const MAX_FLOWERS = 15;

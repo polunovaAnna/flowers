@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-import { MAP_ZOOM, SALON } from '../contacts';
+import { MAP_ZOOM, SALON } from '../constants';
 
 const salonIcon = L.icon({
     iconUrl: markerIcon,

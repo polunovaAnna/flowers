@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { SLOGAN } from "../contacts";
+import { SLOGAN } from "../constants";
 
 const SLIDES = [
     { src: '/slider/slider-1.webp', alt: 'Букет ніжно-рожевих гвоздик' },

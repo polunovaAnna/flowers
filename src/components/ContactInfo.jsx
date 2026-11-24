@@ -1,4 +1,4 @@
-import { SALON } from "../contacts";
+import { SALON } from "../constants";
 
 export function ContactInfo() {
     const phoneLink = `tel:${SALON.phone.replace(/\s/g, '')}`;
