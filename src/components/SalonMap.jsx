@@ -21,28 +21,22 @@ export function SalonMap() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        let map;
+        const map = L.map(containerRef.current).setView(SALON.coordinates, MAP_ZOOM);
 
-        try {
-            map = L.map(containerRef.current).setView(SALON.coordinates, MAP_ZOOM);
-            const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-                maxZoom: 19,
-            }).addTo(map);
+        const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 19,
+        }).addTo(map);
 
-            tiles.on('tileerror', () => {
-                setError("Не вдалося завантажити мапу. Перевірте з'єднання");
-            });
+        tiles.on('tileerror', () => {
+            setError("Не вдалося завантажити мапу. Перевірте з'єднання");
+        });
 
-            L.marker(SALON.coordinates, { icon: salonIcon }).addTo(map).bindPopup(SALON.address);
-        } catch (err) {
-            console.error(err);
-            setError("Не вдалося показати мапу");
-        }
+        tiles.on("load", () => setError(null));
 
-        return () => {
-            if (map) map.remove();
-        };
+        L.marker(SALON.coordinates, { icon: salonIcon }).addTo(map).bindPopup(SALON.address);
+
+        return () => map.remove();
     }, []);
 
     return (
