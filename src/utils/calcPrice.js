@@ -11,7 +11,7 @@ export function calcPrice({
 			const flower = flowers.find((f) => f.id === flowerId);
 			if (!flower || quantity <= 0) return null;
 			return {
-				flowerId,
+				key: flowerId,
 				name: flower.name,
 				quantity,
 				amount: flower.price * quantity,
@@ -31,6 +31,6 @@ export function calcPrice({
 		flowersTotal,
 		wrapper: wrapper && { name: wrapper.name, amount: wrapperPrice },
 		complexity: level && { name: level.name, amount: complexityFee },
-		total: flowersTotal + wrapperPrice + complexity,
+		total: flowersTotal + wrapperPrice + complexityFee,
 	};
 }
