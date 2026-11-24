@@ -1,0 +1,47 @@
+@use '../variables' as *;
+
+.bouquet-preview {
+    --flower-width: 40%;
+    --flower-bottom: 50%;
+
+    position: relative;
+    aspect-ratio: 4 / 5;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+
+    &--bare {
+        --flower-width: 62%;
+        --flower-bottom: 12%;
+    }
+
+    &__layer,
+    &__flowers {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__layer {
+        pointer-events: none;
+    }
+
+    &__flower {
+        position: absolute;
+        left: 50%;
+        bottom: var(--flower-bottom);
+        width: var(--flower-width);
+        transform-origin: 50% 100%;
+        margin-left: calc(var(--flower-width) / -2);
+        transition: bottom 0.25s ease, width 0.25s ease, margin-left 0.25s ease;
+    }
+
+    &__layer--front {
+        transform: translateY(9%);
+    }
+
+    &__layer--back {
+        transform: scale(1.1);
+    }
+}
