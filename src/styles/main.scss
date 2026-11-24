@@ -11,10 +11,12 @@
 @use 'components/bouquet-card';
 @use 'components/salon-map';
 @use 'components/contact-info';
+@use 'components/quantity-stepper';
 
 @use 'pages/flowers-page';
 @use 'pages/contacts-page';
 @use 'pages/home-page';
+@use 'pages/builder-page';
 
 *,
 *::before,
