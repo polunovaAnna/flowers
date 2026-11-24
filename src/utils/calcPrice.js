@@ -1,11 +1,12 @@
 export function calcPrice({
 	items,
 	wrapperId,
+	complexityId,
 	flowers,
 	wrappers,
-	complexity = 0,
+	complexityLevels = [],
 }) {
-	const lines = items
+	const flowerLines = items
 		.map(({ flowerId, quantity }) => {
 			const flower = flowers.find((f) => f.id === flowerId);
 			if (!flower || quantity <= 0) return null;
@@ -18,15 +19,18 @@ export function calcPrice({
 		})
 		.filter(Boolean);
 
-	const flowersTotal = lines.reduce((sum, lines) => sum + lines.amount, 0);
 	const wrapper = wrappers.find((w) => w.id === wrapperId);
-	const wrapperPrice = wrapper ? wrapper.price : 0;
+	const level = complexityLevels.find((c) => c.id === complexityId);
+
+	const flowersTotal = flowerLines.reduce((sum, line) => sum + line.amount, 0);
+	const wrapperPrice = wrapper?.price ?? 0;
+	const complexityFee = level?.fee ?? 0;
 
 	return {
-		lines,
+		flowerLines,
 		flowersTotal,
-		wrapperPrice,
-		complexity,
+		wrapper: wrapper && { name: wrapper.name, amount: wrapperPrice },
+		complexity: level && { name: level.name, amount: complexityFee },
 		total: flowersTotal + wrapperPrice + complexity,
 	};
 }
