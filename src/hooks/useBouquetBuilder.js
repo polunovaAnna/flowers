@@ -39,7 +39,7 @@ function reducer(state, action) {
 	}
 }
 
-export function useBouquet() {
+export function useBouquetBuilder() {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const items = useMemo(
