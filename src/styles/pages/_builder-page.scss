@@ -1,20 +1,184 @@
 @use '../variables' as *;
 
+.builder-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
 .builder {
+    flex: 1;
+    min-height: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
     gap: $space-4;
 
     &__flowers {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: $space-3;
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
         align-content: start;
+        gap: $space-3;
         overflow-y: auto;
+        min-height: 0;
+
+        .flower-card {
+            flex-direction: row;
+            align-items: stretch;
+            height: 100px;
+
+            &__photo {
+                width: 100px;
+                height: auto;
+                min-height: 100px;
+                aspect-ratio: auto;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+
+            &__body {
+                flex: 1;
+                min-width: 0;
+                padding: $space-2 $space-3;
+            }
+
+            &__name {
+                font-size: $text-base;
+            }
+
+            &__meaning {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
+        .quantity-stepper {
+            margin-top: 0;
+            padding: 0 $space-3;
+        }
+    }
+
+    &__preview {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        gap: $space-4;
+        padding-bottom: $space-4;
+    }
+
+    &__stage {
+        flex: 1;
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__wrapper-picker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $space-3;
+
+        >button {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border: 1px solid $color-border;
+            border-radius: 50%;
+            background: $color-surface;
+            color: $color-text;
+            font-size: $text-lg;
+            cursor: pointer;
+            transition: border-color $transition-base;
+
+            &:hover {
+                border-color: $color-button-highlight;
+            }
+        }
+    }
+}
+
+@media (max-width: #{$breakpoint-tablet - 1px}) {
+    .builder-page {
+        height: auto;
+    }
+
+    .builder-page h1 {
+        display: none;
+    }
+
+    .builder {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: none;
+        gap: $space-3;
+    }
+
+    .builder__preview {
+        order: -1;
+        gap: $space-2;
+        padding-bottom: 0;
+    }
+
+    .builder__stage {
+        flex: none;
+        height: 240px;
         min-height: 0;
     }
 
-    @media (max-width: #{$breakpoint-tablet - 1px}) {
-        grid-template-columns: 1fr;
+    .builder__flowers {
+        overflow: visible;
+
+        .flower-card {
+            display: grid;
+            grid-template-columns: 100px minmax(0, 1fr) auto;
+            grid-template-areas:
+                "photo name    name"
+                "photo meaning meaning"
+                "photo price   stepper";
+            align-items: center;
+            height: auto;
+            min-height: 100px;
+    
+            &__photo {
+                grid-area: photo;
+                position: relative;
+                width: 100px;
+                height: 100%;
+                min-height: 0;
+                object-fit: cover;
+                align-self: stretch;
+                contain: size;
+            }
+
+            &__body {
+                display: contents;
+            }
+
+            &__name {
+                grid-area: name;
+                padding: $space-2 $space-3 0;
+            }
+
+            &__meaning {
+                grid-area: meaning;
+                padding: 0 $space-3;
+            }
+            
+            &__price {
+                grid-area: price;
+                padding: 0 $space-3 $space-2;
+            }
+        }
+    
+        .quantity-stepper {
+            grid-area: stepper;
+            width: auto;
+            padding: 0 $space-3 $space-2 0;
+        }
     }
 }
