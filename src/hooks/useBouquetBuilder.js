@@ -1,9 +1,9 @@
 import { useMemo, useReducer } from "react";
-import { MAX_FLOWERS } from "../constants";
+import { MAX_FLOWERS, DEFAULT_WRAPPER_ID } from "../constants";
 
 const initialState = {
 	quantities: {},
-	wrapperId: null,
+	wrapperId: DEFAULT_WRAPPER_ID,
 };
 
 function reducer(state, action) {

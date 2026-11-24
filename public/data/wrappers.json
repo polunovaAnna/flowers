@@ -24,7 +24,7 @@
         "id": "clear",
         "name": "Прозора плівка",
         "price": 40,
-        "back": "/wrapper-svg/plastic-back.svg,",
+        "back": "/wrapper-svg/plastic-back.svg",
         "front": "/wrapper-svg/plastic-front.svg"
     },
     {
@@ -36,21 +36,21 @@
     },
     {
         "id": "blush",
-        "name": "Пудровий папір тиш'ю",
+        "name": "Пудровий тиш'ю",
         "price": 60,
         "back": "/wrapper-svg/pink-back.svg",
-        "front": "/wrapper-svg/pi-front.svg"
+        "front": "/wrapper-svg/pink-front.svg"
     },
     {
         "id": "olive",
-        "name": "Оливкова матова плівка",
+        "name": "Оливкова плівка",
         "price": 65,
         "back": "/wrapper-svg/olive-back.svg",
         "front": "/wrapper-svg/olive-front.svg"
     },
     {
         "id": "burgundy",
-        "name": "Бордовий оксамитовий папір",
+        "name": "Бордовий фетр",
         "price": 70,
         "back": "/wrapper-svg/bordo-back.svg",
         "front": "/wrapper-svg/bordo-front.svg"
