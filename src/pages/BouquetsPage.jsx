@@ -9,6 +9,8 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 import { usePagination } from '../hooks/usePagination';
 import { OCCASION_LABELS } from '../utils/labels';
 import { PRICE_NAME_SORTERS } from '../utils/sorters';
+import { useScrollToTop } from "../hooks/useScrollToTop";
+import { MOBILE_QUERY} from "../constants";
 
 const SEARCH_FIELDS = ['name'];
 const FILTERS = {
@@ -30,7 +32,7 @@ export function BouquetsPage() {
         filters: FILTERS,
     });
 
-    const isMobile = useMediaQuery('(max-width: 767px)');
+    const isMobile = useMediaQuery(MOBILE_QUERY);
     const { page, setPage, totalPages, pageItems } = usePagination(
         visibleItems,
         isMobile ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP
@@ -52,15 +54,14 @@ export function BouquetsPage() {
         Object.values(selected).reduce((sum, values) => sum + values.length, 0) +
         (priceRange.min !== '' || priceRange.max !== '' ? 1 : 0);
 
+    const scrollToTop = useScrollToTop;
     const handlePageChange = (nextPage) => {
         setPage(nextPage);
-        document
-            .querySelector('.app-scroll-area')
-            ?.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollToTop();
     };  
 
     if (isLoading) return <Spinner label="Збираємо букети..." />;
-    if (error) return <p role="alert">{error.message}</p>;
+    if (error) return <p role="alert">{error.message || "Щось пішло не так"}</p>;
 
     return (
         <section className="bouquets-page">

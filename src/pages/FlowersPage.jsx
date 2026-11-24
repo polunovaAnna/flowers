@@ -4,13 +4,14 @@ import { FlowerCard } from "../components/FlowerCard";
 import { useFetch } from "../hooks/useFetch";
 import { useFilteredList } from "../hooks/useFilteredList";
 import { PRICE_NAME_SORTERS } from "../utils/sorters";
-import { COLOR_LABELS } from "../utils/labels";
-import { OCCASION_LABELS } from "../utils/labels";
+import { COLOR_LABELS, OCCASION_LABELS } from "../utils/labels";
+import { MOBILE_QUERY} from "../constants";
 import { PriceRange } from "../components/PriceRange";
 import { Pagination } from "../components/Pagination";
 import { usePagination } from "../hooks/usePagination";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Spinner } from "../components/Spinner";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const SEARCH_FIELDS = ['name']
 const FILTERS = {
@@ -33,18 +34,16 @@ export function FlowersPage() {
     );
     const [filtersOpen, setFiltersOpen] = useState(false);
 
-    const isMobile = useMediaQuery('(max-width: 767px)');
+    const isMobile = useMediaQuery(MOBILE_QUERY);
     const { page, setPage, totalPages, pageItems } = usePagination(
         visibleItems,
         isMobile ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP
     );
 
+    const scrollToTop = useScrollToTop;
     const handlePageChange = (nextPage) => {
         setPage(nextPage);
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        document
-            .querySelector('.app-scroll-area')
-            ?.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        scrollToTop();
     };  
 
     const activeFiltersCount =
@@ -70,7 +69,7 @@ export function FlowersPage() {
     }, [flowers]);
     
     if (isLoading) return <Spinner label="Збираємо квіти..." />;
-    if (error) return <p role="alert">{error.message}</p>
+    if (error) return <p role="alert">{error.message || "Щось пішло не так"}</p>
 
     return (
         <section className="flowers-page">
@@ -105,7 +104,7 @@ export function FlowersPage() {
                     className="flowers-page__filters-toggle"
                     onClick={() => setFiltersOpen((open) => !open)}
                     aria-expanded={filtersOpen}
-                    aria-controls="flower-filters"
+                    aria-controls="flowers-filters"
                 >
                     {filtersOpen ? 'Сховати фільтри' : 'Фільтри'}
                     {activeFiltersCount > 0 && `(${activeFiltersCount})`}

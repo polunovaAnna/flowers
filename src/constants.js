@@ -12,3 +12,6 @@ export const MAP_ZOOM = 16;
 export const SLOGAN = "Квіти без поспіху";
 export const MAX_FLOWERS = 15;
 export const DEFAULT_WRAPPER_ID = "none";
+
+export const MOBILE_QUERY = "(max-width: 767px)";
+export const SCROLL_AREA_SELECTOR = ".app-scroll-area";
