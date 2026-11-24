@@ -4,7 +4,6 @@ import { MAX_FLOWERS } from "../constants";
 const initialState = {
 	quantities: {},
 	wrapperId: null,
-	complexityId: "simple",
 };
 
 function reducer(state, action) {
@@ -12,18 +11,18 @@ function reducer(state, action) {
 		case "ADD_FLOWER": {
 			const total = Object.values(state.quantities).reduce((a, b) => a + b, 0);
 			if (total >= MAX_FLOWERS) return state;
-			const current = state.quantites[action.flowerId] ?? 0;
+			const current = state.quantities[action.flowerId] ?? 0;
 			return {
 				...state,
-				quantites: {
+				quantities: {
 					...state.quantities,
 					[action.flowerId]: current + 1,
 				},
 			};
 		}
 		case "REMOVE_FLOWER": {
-			const current = state.quantites[action.flowerId] ?? 0;
-			const quantities = { ...state.quantites };
+			const current = state.quantities[action.flowerId] ?? 0;
+			const quantities = { ...state.quantities };
 			if (current <= 1) {
 				delete quantities[action.flowerId];
 			} else {
@@ -33,8 +32,6 @@ function reducer(state, action) {
 		}
 		case "SET_WRAPPER":
 			return { ...state, wrapperId: action.wrapperId };
-		case "SET_COMPLEXITY":
-			return { ...state, complexityId: action.complexityId };
 		case "CLEAR":
 			return initialState;
 		default:
@@ -47,11 +44,11 @@ export function useBouquet() {
 
 	const items = useMemo(
 		() =>
-			Object.entries(state.quantites).map(([flowerId, quantity]) => ({
+			Object.entries(state.quantities).map(([flowerId, quantity]) => ({
 				flowerId,
 				quantity,
 			})),
-		[state.quantites],
+		[state.quantities],
 	);
 
 	const totalCount = useMemo(
@@ -63,12 +60,9 @@ export function useBouquet() {
 		items,
 		totalCount,
 		wrapperId: state.wrapperId,
-		complexityId: state.complexityId,
 		addFlower: (flowerId) => dispatch({ type: "ADD_FLOWER", flowerId }),
 		removeFlower: (flowerId) => dispatch({ type: "REMOVE_FLOWER", flowerId }),
 		setWrapper: (wrapperId) => dispatch({ type: "SET_WRAPPER", wrapperId }),
-		setComplexity: (complexityId) =>
-			dispatch({ type: "SET_COMPLEXITY", complexityId }),
 		clear: () => dispatch({ type: "CLEAR" }),
 	};
 }
