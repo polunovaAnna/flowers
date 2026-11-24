@@ -1,0 +1,44 @@
+@use '../variables' as *;
+
+.price-summary {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+
+    &__total {
+        margin: 0;
+        font-family: $font-heading;
+        font-size: $text-lg;
+
+        strong {
+            color: $color-text;
+        }
+    }
+
+    &__total {
+        margin: 0;
+    }
+
+    &__meta {
+        margin: 0;
+        font-size: $text-sm;
+        color: $color-text-secondary;
+    }
+
+    &__limit {
+        margin: $space-2 0 0;
+        font-size: $text-sm;
+        color: $color-error;
+    }
+
+    &__clear {
+        margin-top: $space-2;
+        padding: $space-2 $space-5;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        background: $color-surface;
+        font: inherit;
+        cursor: pointer;
+    }
+}
