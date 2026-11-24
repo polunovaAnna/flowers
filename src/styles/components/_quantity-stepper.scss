@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+.quantity-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-3;
+    padding: $space-2 $space-3 $space-3;
+    margin-top: auto;
+
+    button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
