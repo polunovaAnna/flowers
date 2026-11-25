@@ -3,7 +3,7 @@ import { fetchFlowers } from "../api/dataApi";
 import { FlowerCard } from "../components/FlowerCard";
 import { useFetch } from "../hooks/useFetch";
 import { useFilteredList } from "../hooks/useFilteredList";
-import { PRICE_NAME_SORTERS } from "../utils/sorters";
+import { PRICE_NAME_SORTERS, SORT_OPTIONS } from "../utils/sorters";
 import { COLOR_LABELS, OCCASION_LABELS } from "../utils/labels";
 import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE} from "../constants";
 import { PriceRange } from "../components/PriceRange";
@@ -92,11 +92,11 @@ export function FlowersPage() {
                     value={sortBy}
                     onChange={(event) => setSortBy(event.target.value)}
                 >
-                    <option value="default">За замовчуванням</option>
-                    <option value="name-asc">А–Я</option>
-                    <option value="name-desc">Я–А</option>
-                    <option value="price-asc">Спочатку дешевші</option>
-                    <option value="price-desc">Спочатку дорожчі</option>
+                    {SORT_OPTIONS.map(({ value, label }) => (
+                        <option key={value} value={value}>
+                            {label}
+                        </option>
+                    ))}
                 </select>
                 <button
                     type="button"

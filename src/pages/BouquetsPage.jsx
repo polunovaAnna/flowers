@@ -8,7 +8,7 @@ import { useFilteredList } from '../hooks/useFilteredList';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { usePagination } from '../hooks/usePagination';
 import { OCCASION_LABELS } from '../utils/labels';
-import { PRICE_NAME_SORTERS } from '../utils/sorters';
+import { PRICE_NAME_SORTERS, SORT_OPTIONS } from '../utils/sorters';
 import { useScrollToTop } from "../hooks/useScrollToTop";
 import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE } from "../constants";
 import { ErrorMessage } from '../components/ErrorMessage';
@@ -84,11 +84,11 @@ export function BouquetsPage() {
                     value={sortBy}
                     onChange={(event) => setSortBy(event.target.value)}
                 >
-                    <option value="default">За замовчуванням</option>
-                    <option value="name-asc">А–Я</option>
-                    <option value="name-desc">Я–А</option>
-                    <option value="price-asc">Спочатку дешевші</option>
-                    <option value="price-desc">Спочатку дорожчі</option>
+                    {SORT_OPTIONS.map(({ value, label }) => (
+                        <option key={value} value={value}>
+                            {label}
+                        </option>
+                    ))}
                 </select>
                 <button
                     type="button"
