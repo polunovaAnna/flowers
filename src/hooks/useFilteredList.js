@@ -29,12 +29,14 @@ export function useFilteredList(
 	const visibleItems = useMemo(() => {
 		if (!items) return [];
 		const search = debouncedQuery.trim().toLowerCase();
-		const min = toBound(debouncedPriceRange.min - Infinity);
+		const min = toBound(debouncedPriceRange.min, -Infinity);
 		const max = toBound(debouncedPriceRange.max, Infinity);
 
 		const filtered = items.filter((item) => {
 			const matchesSearch = searchFields.some((field) =>
-				String(item[field]).toLowerCase().includes(search),
+				String(item[field] ?? "")
+					.toLowerCase()
+					.includes(search),
 			);
 
 			const matchesFilters = Object.entries(filters).every(
