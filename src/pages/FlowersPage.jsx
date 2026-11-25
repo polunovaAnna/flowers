@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { fetchFlowers } from "../api/flowersApi";
+import { fetchFlowers } from "../api/dataApi";
 import { FlowerCard } from "../components/FlowerCard";
 import { useFetch } from "../hooks/useFetch";
 import { useFilteredList } from "../hooks/useFilteredList";

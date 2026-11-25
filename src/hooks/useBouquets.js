@@ -1,6 +1,5 @@
 import { useMemo } from "react";
-import { fetchFlowers } from "../api/flowersApi";
-import { fetchBouquets, fetchWrappers } from "../api/bouquetsApi";
+import { fetchFlowers, fetchBouquets, fetchWrappers } from "../api/dataApi";
 import { calcPrice } from "../utils/calcPrice";
 import { useFetch } from "./useFetch";
 

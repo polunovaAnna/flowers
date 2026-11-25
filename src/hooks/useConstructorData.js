@@ -1,6 +1,4 @@
-import { fetchFlowers } from "../api/flowersApi";
-import { fetchWrappers } from "../api/bouquetsApi";
-import { fetchComplexity } from "../api/complexityApi";
+import { fetchFlowers, fetchWrappers, fetchComplexity } from "../api/dataApi";
 import { useFetch } from "./useFetch";
 
 const loadAll = () =>
