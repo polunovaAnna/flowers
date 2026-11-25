@@ -44,7 +44,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: $font-heading;
     font-weight: 600;
 }
@@ -99,6 +100,11 @@ button {
     border: none;
     padding: 0;
     cursor: pointer;
+}
+
+input, select, textarea {
+    font: inherit;
+    color: inherit;
 }
 
 :focus-visible {
