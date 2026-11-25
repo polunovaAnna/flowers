@@ -19,3 +19,5 @@ export const SEARCH_DEBOUNCE_MS = 300;
 export const PRICE_DEBOUNCE_MS = 250;
 export const PRICE_STEP = 5;
 export const PHOTO_SIZE = 300;
+export const PAGE_SIZE_MOBILE = 8;
+export const PAGE_SIZE_DESKTOP = 9;

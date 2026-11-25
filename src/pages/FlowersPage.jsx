@@ -5,7 +5,7 @@ import { useFetch } from "../hooks/useFetch";
 import { useFilteredList } from "../hooks/useFilteredList";
 import { PRICE_NAME_SORTERS } from "../utils/sorters";
 import { COLOR_LABELS, OCCASION_LABELS } from "../utils/labels";
-import { MOBILE_QUERY} from "../constants";
+import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE} from "../constants";
 import { PriceRange } from "../components/PriceRange";
 import { Pagination } from "../components/Pagination";
 import { usePagination } from "../hooks/usePagination";
@@ -40,7 +40,7 @@ export function FlowersPage() {
         isMobile ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP
     );
 
-    const scrollToTop = useScrollToTop;
+    const scrollToTop = useScrollToTop();
     const handlePageChange = (nextPage) => {
         setPage(nextPage);
         scrollToTop();

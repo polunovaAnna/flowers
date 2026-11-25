@@ -10,14 +10,12 @@ import { usePagination } from '../hooks/usePagination';
 import { OCCASION_LABELS } from '../utils/labels';
 import { PRICE_NAME_SORTERS } from '../utils/sorters';
 import { useScrollToTop } from "../hooks/useScrollToTop";
-import { MOBILE_QUERY} from "../constants";
+import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE} from "../constants";
 
 const SEARCH_FIELDS = ['name'];
 const FILTERS = {
     occasion: (bouquet) => bouquet.occasions
 }
-const PAGE_SIZE_MOBILE = 8;
-const PAGE_SIZE_DESKTOP = 9;
 
 export function BouquetsPage() {
     const { bouquets, error, isLoading } = useBouquets();
@@ -54,7 +52,7 @@ export function BouquetsPage() {
         Object.values(selected).reduce((sum, values) => sum + values.length, 0) +
         (priceRange.min !== '' || priceRange.max !== '' ? 1 : 0);
 
-    const scrollToTop = useScrollToTop;
+    const scrollToTop = useScrollToTop();
     const handlePageChange = (nextPage) => {
         setPage(nextPage);
         scrollToTop();
