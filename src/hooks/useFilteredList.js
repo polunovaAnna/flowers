@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useDebounce } from "./useDebounce";
+import { SEARCH_DEBOUNCE_MS, PRICE_DEBOUNCE_MS } from "../constants";
 
 const NO_FILTERS = {};
 
@@ -13,8 +14,8 @@ export function useFilteredList(
 	const [sortBy, setSortBy] = useState("default");
 	const [selected, setSelected] = useState({});
 	const [priceRange, setPriceRange] = useState({ min: "", max: "" });
-	const debouncedQuery = useDebounce(query, 300);
-	const debouncedPriceRange = useDebounce(priceRange, 250);
+	const debouncedQuery = useDebounce(query, SEARCH_DEBOUNCE_MS);
+	const debouncedPriceRange = useDebounce(priceRange, PRICE_DEBOUNCE_MS);
 
 	const toggleFilter = (name, value) => {
 		setSelected((prev) => {

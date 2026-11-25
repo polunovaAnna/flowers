@@ -1,3 +1,5 @@
+import { PRICE_STEP } from "../constants";
+
 export function PriceRange({ bounds, value, onChange }) {
     const low = value.min === '' ? bounds.min : Number(value.min);
     const high = value.max === '' ? bounds.max : Number(value.max);
@@ -32,7 +34,7 @@ export function PriceRange({ bounds, value, onChange }) {
                     className="price-range__input"
                     min={bounds.min}
                     max={bounds.max}
-                    step={5}
+                    step={PRICE_STEP}
                     value={low}
                     onChange={handleLow}
                     aria-label="Ціна від"
