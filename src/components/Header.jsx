@@ -25,7 +25,7 @@ export function Header() {
     return (
         <header className="header">
             <Link to="/" className="header__logo">
-                <img src="logo/logo_60.svg" alt="" className="header__logo-img" />
+                <img src="/logo/logo_60.svg" alt="" className="header__logo-img" />
                 <span className="header__logo-text">Rosette</span>
             </Link>
 
