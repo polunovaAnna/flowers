@@ -44,7 +44,7 @@ export function PriceRange({ bounds, value, onChange }) {
                     className="price-range__input"
                     min={bounds.min}
                     max={bounds.max}
-                    step={5}
+                    step={PRICE_STEP}
                     value={high}
                     onChange={handleHigh}
                     aria-label="Ціна до"
