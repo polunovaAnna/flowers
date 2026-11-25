@@ -15,7 +15,7 @@ export function BuilderPage() {
     const { flowers, wrappers, complexityLevels, error, isLoading } = useConstructorData();
     const builder = useBouquetBuilder();
 
-    const complexityId = getComplexityId(builder.totalCount);
+    const complexityId = getComplexityId(complexityLevels, builder.totalCount);
 
     const wrapper = wrappers?.find((w) => w.id === builder.wrapperId) ?? null;
     const wrapperName = wrapper?.name ?? "Без обгортки";
@@ -51,7 +51,7 @@ export function BuilderPage() {
 
     return (
         <section className="builder-page">
-            <h1>Сторінка конструктора</h1>
+            <h1>Конструктор букетів</h1>
             <div className="builder">
                 <div className="builder__flowers" aria-label="Квіти">
                     {flowers.map((flower) => (

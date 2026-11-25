@@ -1,5 +1,12 @@
-export function getComplexityId(totalCount) {
-	if (totalCount > 10) return "rich";
-	if (totalCount > 5) return "medium";
-	return "simple";
+export function getComplexityId(levels = [], totalCount) {
+	let best = null;
+
+	for (const level of levels) {
+		const fits = level.minFlowers <= totalCount;
+		if (fits && (!best || level.minFlowers > best.minFlowers)) {
+			best = level;
+		}
+	}
+
+	return best?.id ?? null;
 }

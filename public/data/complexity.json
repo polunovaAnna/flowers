@@ -3,17 +3,20 @@
         "id": "simple", 
         "name": "Проста", 
         "description": "Невелика щільна композиція", 
+        "minFlowers": 0,
         "fee": 0 
     },
     {
         "id": "medium", 
         "name": "Середня", 
         "description": "Більше шарів, акуратна форма", 
+        "minFlowers": 6,
         "fee": 80
     },
     { 
         "id": "rich", 
         "name": "Пишна", 
+        "minFlowers": 11,
         "description": "Пишна композиція з доопрацюванням", 
         "fee": 160 
     }
