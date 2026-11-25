@@ -11,7 +11,10 @@ export function usePagination(items, pageSize = 10) {
 	const page = state.page;
 
 	const setPage = (nextPage) =>
-		setState((prev) => ({ ...prev, page: nextPage }));
+		setState((prev) => ({
+			...prev,
+			page: Math.min(Math.max(1, nextPage), totalPages),
+		}));
 
 	const pageItems = useMemo(
 		() => items.slice((page - 1) * pageSize, page * pageSize),
