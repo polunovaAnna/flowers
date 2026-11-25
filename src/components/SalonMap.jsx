@@ -5,6 +5,7 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { MAP_ZOOM, SALON } from '../constants';
+import { ErrorMessage } from './ErrorMessage';
 
 const salonIcon = L.icon({
     iconUrl: markerIcon,
@@ -47,11 +48,7 @@ export function SalonMap() {
                 role="region"
                 aria-label={`Мапа: ${SALON.address}`}
             />
-            {error && (
-                <p className="salon-map__error" role="alert">
-                    {error}
-                </p>
-            )}
+            {error && <ErrorMessage message={error} />}
         </div>
     )
 }

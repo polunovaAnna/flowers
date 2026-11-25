@@ -10,6 +10,7 @@ import { stepWrapper } from "../utils/stepWrapper";
 import { BouquetPreview } from "../components/BouquetPreview";
 import { PriceSummary } from "../components/PriceSummary";
 import { Spinner } from "../components/Spinner";
+import { ErrorMessage } from "../components/ErrorMessage";
 
 export function BuilderPage() {
     const { flowers, wrappers, complexityLevels, error, isLoading } = useConstructorData();
@@ -47,7 +48,7 @@ export function BuilderPage() {
     }, [builder.stems, flowers]);
 
     if (isLoading) return <Spinner label="Готуємо конструктор..." />;
-    if (error) return <p role="alert">{error.message || "Щось пішло не так"}</p>;
+    if (error) return <ErrorMessage message={error.message} />;
 
     return (
         <section className="builder-page">

@@ -12,6 +12,7 @@ import { usePagination } from "../hooks/usePagination";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Spinner } from "../components/Spinner";
 import { useScrollToTop } from "../hooks/useScrollToTop";
+import { ErrorMessage } from "../components/ErrorMessage";
 
 const SEARCH_FIELDS = ['name']
 const FILTERS = {
@@ -67,7 +68,7 @@ export function FlowersPage() {
     }, [flowers]);
     
     if (isLoading) return <Spinner label="Збираємо квіти..." />;
-    if (error) return <p role="alert">{error.message || "Щось пішло не так"}</p>
+    if (error) return <ErrorMessage message={error.message} />;
 
     return (
         <section className="flowers-page">

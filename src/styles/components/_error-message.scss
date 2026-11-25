@@ -1,0 +1,6 @@
+@use '../variables' as *;
+
+.error-message {
+    margin: $space-2 0 0;
+    color: $color-error;
+}

@@ -10,7 +10,8 @@ import { usePagination } from '../hooks/usePagination';
 import { OCCASION_LABELS } from '../utils/labels';
 import { PRICE_NAME_SORTERS } from '../utils/sorters';
 import { useScrollToTop } from "../hooks/useScrollToTop";
-import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE} from "../constants";
+import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE } from "../constants";
+import { ErrorMessage } from '../components/ErrorMessage';
 
 const SEARCH_FIELDS = ['name'];
 const FILTERS = {
@@ -59,7 +60,7 @@ export function BouquetsPage() {
     };  
 
     if (isLoading) return <Spinner label="Збираємо букети..." />;
-    if (error) return <p role="alert">{error.message || "Щось пішло не так"}</p>;
+    if (error) return <ErrorMessage message={error.message} />;
 
     return (
         <section className="bouquets-page">
