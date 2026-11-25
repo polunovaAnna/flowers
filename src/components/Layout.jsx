@@ -1,12 +1,18 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useScrollToTop } from "../hooks/useScrollToTop";
 import { Header } from './Header';
 import { HeroSlider } from './HeroSlider';
-import { useLocation } from 'react-router-dom';
 
 export function Layout() {
 
     const { pathname } = useLocation();
+    const scrollToTop = useScrollToTop();
     const showSlider = pathname !== '/builder';
+
+    useEffect(() => {
+        scrollToTop();
+    }, [pathname, scrollToTop]);
 
     return (
         <div className="app-shell">
@@ -20,7 +26,6 @@ export function Layout() {
                     <main className="app-main">
                         <Outlet />
                     </main>
-                {/* Крок 4: Footer */}
                 </div>
             </div>
         </div>
