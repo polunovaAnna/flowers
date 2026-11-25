@@ -72,7 +72,7 @@ export function FlowersPage() {
 
     return (
         <section className="flowers-page">
-            <h1>Каталог квітів</h1>
+            <h1>Квіти</h1>
             <div className="flowers-page__toolbar">
                 <input
                     type="search"
@@ -93,8 +93,8 @@ export function FlowersPage() {
                     onChange={(event) => setSortBy(event.target.value)}
                 >
                     <option value="default">За замовчуванням</option>
-                    <option value="name-asc">А-Я</option>
-                    <option value="name-desc">Я-А</option>
+                    <option value="name-asc">А–Я</option>
+                    <option value="name-desc">Я–А</option>
                     <option value="price-asc">Спочатку дешевші</option>
                     <option value="price-desc">Спочатку дорожчі</option>
                 </select>
@@ -106,7 +106,7 @@ export function FlowersPage() {
                     aria-controls="flowers-filters"
                 >
                     {filtersOpen ? 'Сховати фільтри' : 'Фільтри'}
-                    {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+                    {activeFiltersCount > 0 && `( ${activeFiltersCount})`}
                 </button>
             </div>
 
@@ -142,7 +142,7 @@ export function FlowersPage() {
                         ))}
                     </fieldset>
                     <fieldset className="flowers-page__filter">
-                        <legend>Ціна, грн</legend>
+                        <legend>Ціна</legend>
                         <PriceRange
                             bounds={priceBounds}
                             value={priceRange}

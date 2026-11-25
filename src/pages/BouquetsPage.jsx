@@ -85,8 +85,8 @@ export function BouquetsPage() {
                     onChange={(event) => setSortBy(event.target.value)}
                 >
                     <option value="default">За замовчуванням</option>
-                    <option value="name-asc">А-Я</option>
-                    <option value="name-desc">Я-А</option>
+                    <option value="name-asc">А–Я</option>
+                    <option value="name-desc">Я–А</option>
                     <option value="price-asc">Спочатку дешевші</option>
                     <option value="price-desc">Спочатку дорожчі</option>
                 </select>
