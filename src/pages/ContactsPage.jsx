@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { SalonMap } from "../components/SalonMap";
+import { Spinner } from "../components/Spinner";
 import { ContactInfo } from "../components/ContactInfo";
 
 const SalonMap = lazy(() =>
