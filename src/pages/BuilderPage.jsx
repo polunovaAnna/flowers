@@ -41,15 +41,12 @@ export function BuilderPage() {
     ]);
 
     const flowerImages = useMemo(() => {
-	if (!flowers) return [];
-	return builder.items.flatMap(({ flowerId, quantity }) => {
-		const flower = flowers.find((f) => f.id === flowerId);
-		return flower ? Array(quantity).fill(flower) : [];
-	});
-    }, [builder.items, flowers]);
+        if (!flowers) return [];
+        return builder.stems.map((id) => flowers.find((f) => f.id === id)).filter(Boolean);
+    }, [builder.stems, flowers]);
 
-    if (isLoading) return <p>завантаження...</p>
-    if (error) return <p>Не вдалося завантажити дані конструктора.</p>;
+    if (isLoading) return <Spinner label="Готуємо конструктор..." />;
+    if (error) return <p role="alert">{error.message || "Щось пішло не так"}</p>;
 
     return (
         <section className="builder-page">
