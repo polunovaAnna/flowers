@@ -1,9 +1,16 @@
-export function BouquetCard({ bouquet }) {
+import { Photo } from "../components/Photo";
+
+export function BouquetCard({ bouquet, priority = false }) {
     const { name, description, price, photo, composition, wrapper } = bouquet;
 
     return (
         <article className="bouquet-card">
-            <img src={photo} alt={name} className="bouquet-card__photo" loading="lazy" />
+            <Photo
+                src={photo}
+                alt={name}
+                className="bouquet-card__photo"
+                priority={priority}
+            />
 
             <div className="bouquet-card__body">
                 <h3 className="bouquet-card__name">{name}</h3>
