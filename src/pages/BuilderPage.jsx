@@ -9,6 +9,7 @@ import { MAX_FLOWERS } from "../constants";
 import { stepWrapper } from "../utils/stepWrapper";
 import { BouquetPreview } from "../components/BouquetPreview";
 import { PriceSummary } from "../components/PriceSummary";
+import { Spinner } from "../components/Spinner";
 
 export function BuilderPage() {
     const { flowers, wrappers, complexityLevels, error, isLoading } = useConstructorData();
