@@ -12,6 +12,8 @@ export function useBouquets() {
 	const bouquets = useMemo(() => {
 		if (!data) return null;
 		const [rawBouquets, flowers, wrappers] = data;
+		const flowerById = new Map(flowers.map((f) => [f.id, f]));
+		const wrapperById = new Map(wrappers.map((w) => [w.id, w]));
 
 		return rawBouquets.map((bouquet) => {
 			const { total } = calcPrice({
@@ -21,14 +23,12 @@ export function useBouquets() {
 				wrappers,
 			});
 
-			const composition = bouquet.items
-				.map(({ flowerId, quantity }) => {
-					const flower = flowers.find((f) => f.id === flowerId);
-					return flower ? { flower, quantity } : null;
-				})
-				.filter(Boolean);
+			const composition = bouquet.items.flatMap(({ flowerId, quanityty }) => {
+				const flower = flowerById.get(flowerId);
+				return flower ? [{ flower, quanityty }] : [];
+			});
 
-			const wrapper = wrappers.find((w) => w.id === bouquet.wrapperId) ?? null;
+			const wrapper = wrapperById.get(bouquet.wrapperId) ?? null;
 
 			return { ...bouquet, price: total, composition, wrapper };
 		});
