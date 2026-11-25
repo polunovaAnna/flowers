@@ -23,9 +23,9 @@ export function useBouquets() {
 				wrappers,
 			});
 
-			const composition = bouquet.items.flatMap(({ flowerId, quanityty }) => {
+			const composition = bouquet.items.flatMap(({ flowerId, quantity }) => {
 				const flower = flowerById.get(flowerId);
-				return flower ? [{ flower, quanityty }] : [];
+				return flower ? [{ flower, quantity }] : [];
 			});
 
 			const wrapper = wrapperById.get(bouquet.wrapperId) ?? null;
