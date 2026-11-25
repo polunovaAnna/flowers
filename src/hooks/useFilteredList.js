@@ -1,9 +1,13 @@
 import { useMemo, useState } from "react";
 import { useDebounce } from "./useDebounce";
 
+const NO_FILTERS = {};
+
+const toBound = (value, fallback) => (value === "" ? fallback : Number(value));
+
 export function useFilteredList(
 	items,
-	{ searchFields, sorters, filters = {} },
+	{ searchFields, sorters, filters = NO_FILTERS },
 ) {
 	const [query, setQuery] = useState("");
 	const [sortBy, setSortBy] = useState("default");
@@ -25,6 +29,8 @@ export function useFilteredList(
 	const visibleItems = useMemo(() => {
 		if (!items) return [];
 		const search = debouncedQuery.trim().toLowerCase();
+		const min = toBound(debouncedPriceRange.min - Infinity);
+		const max = toBound(debouncedPriceRange.max, Infinity);
 
 		const filtered = items.filter((item) => {
 			const matchesSearch = searchFields.some((field) =>
@@ -41,15 +47,6 @@ export function useFilteredList(
 					return values.some((v) => chosen.includes(v));
 				},
 			);
-
-			const min =
-				debouncedPriceRange.min === ""
-					? -Infinity
-					: Number(debouncedPriceRange.min);
-			const max =
-				debouncedPriceRange.max === ""
-					? Infinity
-					: Number(debouncedPriceRange.max);
 			const matchesPrice = item.price >= min && item.price <= max;
 
 			return matchesSearch && matchesFilters && matchesPrice;
