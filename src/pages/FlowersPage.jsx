@@ -18,8 +18,6 @@ const FILTERS = {
     color: (flower) => flower.color,
     occasion: (flower) => flower.occasions
 }
-const PAGE_SIZE_MOBILE = 8;
-const PAGE_SIZE_DESKTOP = 9;
 
 export function FlowersPage() {
     const { data: flowers, error, isLoading } = useFetch(fetchFlowers);
