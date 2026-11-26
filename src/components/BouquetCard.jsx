@@ -16,16 +16,19 @@ export function BouquetCard({ bouquet, priority = false }) {
                 <h3 className="bouquet-card__name">{name}</h3>
                 <p className="bouquet-card__description">{description}</p>
 
-                <ul className="bouquet-card__composition">
-                    {composition.map(({ flower, quantity }) =>
-                        <li key={flower.id}>
-                            <span className="bouquet-card__flower">
-                                {flower.name} x {quantity}
-                            </span>
-                            <span className="bouquet-card__meaning">{flower.meaning}</span>
-                        </li>
-                    )}
-                </ul>
+                <details className="bouquet-card__details">
+                    <summary className="bouquet-card__summary">Склад букета</summary>
+                        <ul className="bouquet-card__composition">
+                        {composition.map(({ flower, quantity }) =>
+                            <li key={flower.id}>
+                                <span className="bouquet-card__flower">
+                                    {flower.name} × {quantity}
+                                </span>
+                                <span className="bouquet-card__meaning">{flower.meaning}</span>
+                            </li>
+                        )}
+                        </ul>
+                </details>
 
                 {wrapper && wrapper.price > 0 && (
                     <p className="bouquet-card__wrapper">Обгортка: {wrapper.name}</p>

@@ -47,14 +47,24 @@
         color: $color-text-secondary;
     }
 
+    &__details {
+        padding-top: $space-2;
+        border-top: 1px solid $color-border;
+    }
+
+    &__summary {
+        cursor: pointer;
+        font-size: $text-base;
+        color: $color-accent-deep;
+    }
+
     &__composition {
         display: flex;
         flex-direction: column;
         gap: $space-1;
-        margin: 0;
-        padding: $space-2 0 0;
+        margin: $space-2 0 0;
+        padding: 0;
         list-style: none;
-        border-top: 1px solid $color-border;
 
         li {
             display: flex;
