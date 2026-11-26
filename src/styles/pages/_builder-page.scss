@@ -1,5 +1,6 @@
 @use '../variables' as *;
 @use '../mixins' as *;
+$builder-thumb: 100px;
 
 .builder-page {
     display: flex;
@@ -29,12 +30,12 @@
         .flower-card {
             flex-direction: row;
             align-items: stretch;
-            height: 100px;
+            height: $builder-thumb;
 
             &__photo {
-                width: 100px;
+                width: $builder-thumb;
                 height: auto;
-                min-height: 100px;
+                min-height: $builder-thumb;
                 aspect-ratio: auto;
                 object-fit: cover;
                 flex-shrink: 0;
@@ -105,7 +106,7 @@
     }
 }
 
-@media (max-width: #{$breakpoint-tablet - 1px}) {
+@include mobile {
     .builder-page {
         height: auto;
     }
@@ -118,69 +119,69 @@
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: none;
         gap: $space-3;
-    }
 
-    .builder__preview {
-        order: -1;
-        gap: $space-2;
-        padding-bottom: 0;
-    }
-
-    .builder__stage {
-        flex: none;
-        height: 240px;
-        min-height: 0;
-    }
-
-    .builder__flowers {
-        overflow: visible;
-
-        .flower-card {
-            display: grid;
-            grid-template-columns: 100px minmax(0, 1fr) auto;
-            grid-template-areas:
-                "photo name    name"
-                "photo meaning meaning"
-                "photo price   stepper";
-            align-items: center;
-            height: auto;
-            min-height: 100px;
-    
-            &__photo {
-                grid-area: photo;
-                position: relative;
-                width: 100px;
-                height: 100%;
-                min-height: 0;
-                object-fit: cover;
-                align-self: stretch;
-                contain: size;
-            }
-
-            &__body {
-                display: contents;
-            }
-
-            &__name {
-                grid-area: name;
-                padding: $space-2 $space-3 0;
-            }
-
-            &__meaning {
-                grid-area: meaning;
-                padding: 0 $space-3;
-            }
-            
-            &__price {
-                grid-area: price;
-                padding: 0 $space-3 $space-2;
-            }
+        &__preview {
+            order: -1;
+            gap: $space-2;
+            padding-bottom: 0;
         }
-    
-        .quantity-stepper {
-            grid-area: stepper;
-            width: auto;
-            padding: 0 $space-3 $space-2 0;
+
+        &__stage {
+            flex: none;
+            height: 240px;
+            min-height: 0;
+        }
+
+        &__flowers {
+            overflow: visible;
+
+            .flower-card {
+                display: grid;
+                grid-template-columns: $builder-thumb minmax(0, 1fr) auto;
+                grid-template-areas:
+                    "photo name    name"
+                    "photo meaning meaning"
+                    "photo price   stepper";
+                align-items: center;
+                height: auto;
+                min-height: $builder-thumb;
+
+                &__photo {
+                    grid-area: photo;
+                    position: relative;
+                    width: $builder-thumb;
+                    height: 100%;
+                    min-height: 0;
+                    object-fit: cover;
+                    align-self: stretch;
+                    contain: size;
+                }
+
+                &__body {
+                    display: contents;
+                }
+
+                &__name {
+                    grid-area: name;
+                    padding: $space-2 $space-3 0;
+                }
+
+                &__meaning {
+                    grid-area: meaning;
+                    padding: 0 $space-3;
+                }
+
+                &__price {
+                    grid-area: price;
+                    padding: 0 $space-3 $space-2;
+                }
+            }
+
+            .quantity-stepper {
+                grid-area: stepper;
+                width: auto;
+                padding: 0 $space-3 $space-2 0;
+            }
         }
     }
 }

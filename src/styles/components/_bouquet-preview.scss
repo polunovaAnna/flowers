@@ -34,7 +34,7 @@
         width: var(--flower-width);
         transform-origin: 50% 100%;
         margin-left: calc(var(--flower-width) / -2);
-        transition: bottom 0.25s ease, width 0.25s ease, margin-left 0.25s ease;
+        transition: bottom $transition-base, width $transition-base, margin-left $transition-base;
     }
 
     &__layer--front {
