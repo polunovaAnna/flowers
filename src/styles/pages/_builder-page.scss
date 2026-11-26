@@ -17,6 +17,13 @@ $builder-thumb: 100px;
     grid-template-rows: minmax(0, 1fr);
     gap: $space-4;
 
+    &__picker {
+        display: flex;
+        flex-direction: column;
+        gap: $space-3;
+        min-height: 0;
+    }
+
     &__flowers {
         @include hide-scrollbar;
         display: grid;

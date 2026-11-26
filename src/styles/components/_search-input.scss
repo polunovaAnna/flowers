@@ -1,0 +1,19 @@
+@use '../variables' as *;
+
+.search-input {
+    display: block;
+    width: 100%;
+    padding: $space-2 $space-3;
+    font-family: $font-body;
+    font-size: $text-base;
+    color: $color-text;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    transition: border-color $transition-base;
+
+    &:hover,
+    &:focus {
+        border-color: $color-button-highlight;
+    }
+}

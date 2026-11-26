@@ -11,10 +11,20 @@ import { BouquetPreview } from "../components/BouquetPreview";
 import { PriceSummary } from "../components/PriceSummary";
 import { Spinner } from "../components/Spinner";
 import { ErrorMessage } from "../components/ErrorMessage";
+import { useFilteredList } from "../hooks/useFilteredList";
+import { PRICE_NAME_SORTERS } from "../utils/sorters";
+import { SearchInput } from "../components/SearchInput";
+
+const SEARCH_FIELDS = ["name"];
 
 export function BuilderPage() {
     const { flowers, wrappers, complexityLevels, error, isLoading } = useConstructorData();
     const builder = useBouquetBuilder();
+
+    const { visibleItems, query, setQuery } = useFilteredList(flowers, {
+        searchFields: SEARCH_FIELDS,
+        sorters: PRICE_NAME_SORTERS
+    });
 
     const complexityId = getComplexityId(complexityLevels, builder.totalCount);
 
@@ -54,18 +64,27 @@ export function BuilderPage() {
         <section className="builder-page">
             <h1>Конструктор букетів</h1>
             <div className="builder">
-                <div className="builder__flowers" aria-label="Квіти">
-                    {flowers.map((flower) => (
-                        <FlowerCard key={flower.id} flower={flower}>
-                            <QuantityStepper
-                                label={flower.name}
-                                quantity={quantities[flower.id] ?? 0}
-                                canAdd={builder.totalCount < MAX_FLOWERS}
-                                onAdd={() => builder.addFlower(flower.id)}
-                                onRemove={() => builder.removeFlower(flower.id)}
-                            />
-                        </FlowerCard>
-                    ))}
+                <div className="builder__picker">
+                    <SearchInput
+                        id="builder-search"
+                        label="Пошук квітів за назвою"
+                        value={query}
+                        onChange={setQuery}
+                    />
+                    <div className="builder__flowers" aria-label="Квіти">
+                        {visibleItems.length === 0 && <p>Нічого не знайдено</p>}
+                        {visibleItems.map((flower) => (
+                            <FlowerCard key={flower.id} flower={flower}>
+                                <QuantityStepper
+                                    label={flower.name}
+                                    quantity={quantities[flower.id] ?? 0}
+                                    canAdd={builder.totalCount < MAX_FLOWERS}
+                                    onAdd={() => builder.addFlower(flower.id)}
+                                    onRemove={() => builder.removeFlower(flower.id)}
+                                />
+                            </FlowerCard>
+                        ))}
+                    </div>
                 </div>
                 <div className="builder__preview">
                     <div className="builder__stage">
