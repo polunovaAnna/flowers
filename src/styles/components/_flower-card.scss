@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .flower-card {
     display: flex;
@@ -46,10 +47,8 @@
         font-weight: 700;
         color: $color-text;
     }
-}
 
-@media (max-width: #{$breakpoint-tablet - 1px}) {
-    .flower-card {
+    @include mobile {
         &__body {
             padding: $space-2;
         }

@@ -6,8 +6,8 @@
     }
 }
 
-@mixin tablet-down {
-    @media (max-width: ($breakpoint-desktop - 1px)) {
+@mixin tablet-up {
+    @media (min-width: $breakpoint-tablet) {
         @content;
     }
 }
