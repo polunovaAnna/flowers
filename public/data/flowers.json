@@ -130,5 +130,93 @@
         "occasions": ["romance", "anniversary", "congratulations"],
         "photo": "/flowers/purple-eustoma.webp",
         "illustration": "/flowers_svg/purple-eustoma.svg"
+    },
+    {
+        "id": "red-tulip",
+        "name": "Червоний тюльпан",
+        "type": "tulip",
+        "color": "red",
+        "price": 35,
+        "meaning": "Щире кохання, пристрасть, весняне тепло",
+        "occasions": ["romance", "spring", "birthday"],
+        "photo": "/flowers/red-tulip.webp",
+        "illustration": "/flowers_svg/red-tulip.svg"
+    },
+    {
+        "id": "red-carnation",
+        "name": "Червона гвоздика",
+        "type": "carnation",
+        "color": "red",
+        "price": 35,
+        "meaning": "Глибока повага, захоплення, відданість",
+        "occasions": ["anniversary", "gratitude", "congratulations"],
+        "photo": "/flowers/red-carnation.webp",
+        "illustration": "/flowers_svg/red-carnation.svg"
+    },
+    {
+        "id": "pink-rose",
+        "name":"Рожева троянда",
+        "type": "rose",
+        "color": "pink",
+        "price": 55,
+        "meaning": "Вдячність, витонченість, симпатія",
+        "occasions": ["romance", "birthday", "gratitude"],
+        "photo": "/flowers/pink-rose.webp",
+        "illustration": "/flowers_svg/pink-rose.svg"
+    },
+    {
+        "id": "orange-tulip",
+        "name": "Помаранчевий тюльпан",
+        "type": "tulip",
+        "color": "orange",
+        "price": 35,
+        "meaning": "Натхнення, сонячна енергія, радість зустрічі",
+        "occasions": ["spring", "just-because", "gratitude"],
+        "photo": "/flowers/orange-tulip.webp",
+        "illustration": "/flowers_svg/orange-tulip.svg"
+    },
+    {
+        "id": "pink-tulip",
+        "name": "Рожевий тюльпан",
+        "type": "tulip",
+        "color": "pink",
+        "price": 35,
+        "meaning": "Турбота, легкість, весняна ніжність",
+        "occasions": ["spring", "just-because", "birthday"],
+        "photo": "/flowers/pink-tulip.webp",
+        "illustration": "/flowers_svg/pink-tulip.svg"
+    },
+    {
+        "id": "pink-eustoma",
+        "name": "Рожева еустома",
+        "type": "eustoma",
+        "color": "pink",
+        "price": 70,
+        "meaning": "Романтика, шарм, щирі побажання",
+        "occasions": ["wedding", "anniversary", "romance"],
+        "photo": "/flowers/pink-eustoma.webp",
+        "illustration": "/flowers_svg/pink-eustoma.svg"
+    },
+    {
+        "id": "yellow-daffodil",
+        "name": "Жовтий нарцис",
+        "type": "daffodil",
+        "color": "yellow",
+        "price": 30,
+        "meaning": "Оновлення, світлі думки, подих весни",
+        "occasions": ["spring", "just-because", "gratitude"],
+        "photo": "/flowers/yellow-daffodil.webp",
+        "illustration": "/flowers_svg/yellow-daffodil.svg"
+    },
+    {
+        "id": "purple-tulip",
+        "name": "Фіолетовий тюльпан",
+        "type": "tulip",
+        "color": "purple",
+        "price": 40,
+        "meaning": "Шляхетність, чарівність, повага",
+        "occasions": ["spring", "romance", "just-because"],
+        "photo": "/flowers/purple-tulip.webp",
+        "illustration": "/flowers_svg/purple-tulip.svg"
     }
 ]

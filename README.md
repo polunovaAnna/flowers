@@ -1,19 +1,27 @@
 ## Credits (фото)
 
-| Квіти                                  | Автор                     | Джерело                                                                            | Ліцензія       |
-| -------------------------------------- | :------------------------ | ---------------------------------------------------------------------------------- | -------------- |
-| `public/flowers/pink-peony.webp`       | Studio Naae               | https://www.pexels.com/photo/pink-flowers-in-close-up-photography-10164400/        | Pexels License |
-| `public/flowers/red-rose.webp`         | Nour Alhoda               | https://www.pexels.com/photo/elegant-red-roses-on-soft-white-fabric-33906675/      | Pexels License |
-| `public/flowers/white-daisy.webp`      | Neslihan Ercan            | https://www.pexels.com/photo/white-daisies-in-close-up-photography-8121031/        | Pexels License |
-| `public/flowers/white-rose.webp`       | solod_sha Content creator | https://www.pexels.com/photo/white-rose-on-white-textile-7664099/                  | Pexels License |
-| `public/flowers/yellow-tulip.webp`     | Esra Erdem                | https://www.pexels.com/photo/yellow-tulip-on-white-sheet-21675075/                 | Pexels License |
-| `public/flowers/orange-rose.webp`      | Jill Burrow               | https://www.pexels.com/photo/roses-in-line-near-white-wall-6636017/                | Pexels License |
-| `public/flowers/white-calla.webp`      | Alina Skazka              | https://www.pexels.com/photo/lilies-in-vase-in-home-decor-16318288/                | Pexels License |
-| `public/flowers/white-daffodil.webp`   | Ekaterina Nekhai          | https://www.pexels.com/photo/close-up-photo-of-daffodil-flowers-8597551/           | Pexels License |
-| `public/flowers/white-gypsophila.webp` | Leeloo The First          | https://www.pexels.com/photo/close-up-of-wild-flowers-on-white-background-5038744/ | Pexels License |
-| `public/flowers/pink-carnation.webp`   | KATRIN BOLOTSOVA          | https://www.pexels.com/photo/a-close-up-shot-of-a-carnation-flower-9130828/        | Pexels License |
-| `public/flowers/eucalyptus.webp`       | Eva Bronzini              | https://www.pexels.com/photo/eucalyptus-branch-on-gray-background-6066993/         | Pexels License |
-| `public/flowers/purple-eustoma.webp`   | Feyza Daştan              | https://www.pexels.com/photo/purple-flowers-on-white-bedding-18386638/             | Pexels License |
+| Квіти                                  | Автор                     | Джерело                                                                                    | Ліцензія       |
+| -------------------------------------- | :------------------------ | ------------------------------------------------------------------------------------------ | -------------- |
+| `public/flowers/pink-peony.webp`       | Studio Naae               | https://www.pexels.com/photo/pink-flowers-in-close-up-photography-10164400/                | Pexels License |
+| `public/flowers/red-rose.webp`         | Nour Alhoda               | https://www.pexels.com/photo/elegant-red-roses-on-soft-white-fabric-33906675/              | Pexels License |
+| `public/flowers/white-daisy.webp`      | Neslihan Ercan            | https://www.pexels.com/photo/white-daisies-in-close-up-photography-8121031/                | Pexels License |
+| `public/flowers/white-rose.webp`       | solod_sha Content creator | https://www.pexels.com/photo/white-rose-on-white-textile-7664099/                          | Pexels License |
+| `public/flowers/yellow-tulip.webp`     | Esra Erdem                | https://www.pexels.com/photo/yellow-tulip-on-white-sheet-21675075/                         | Pexels License |
+| `public/flowers/orange-rose.webp`      | Jill Burrow               | https://www.pexels.com/photo/roses-in-line-near-white-wall-6636017/                        | Pexels License |
+| `public/flowers/white-calla.webp`      | Alina Skazka              | https://www.pexels.com/photo/lilies-in-vase-in-home-decor-16318288/                        | Pexels License |
+| `public/flowers/white-daffodil.webp`   | Ekaterina Nekhai          | https://www.pexels.com/photo/close-up-photo-of-daffodil-flowers-8597551/                   | Pexels License |
+| `public/flowers/white-gypsophila.webp` | Leeloo The First          | https://www.pexels.com/photo/close-up-of-wild-flowers-on-white-background-5038744/         | Pexels License |
+| `public/flowers/pink-carnation.webp`   | KATRIN BOLOTSOVA          | https://www.pexels.com/photo/a-close-up-shot-of-a-carnation-flower-9130828/                | Pexels License |
+| `public/flowers/eucalyptus.webp`       | Eva Bronzini              | https://www.pexels.com/photo/eucalyptus-branch-on-gray-background-6066993/                 | Pexels License |
+| `public/flowers/purple-eustoma.webp`   | Feyza Daştan              | https://www.pexels.com/photo/purple-flowers-on-white-bedding-18386638/                     | Pexels License |
+| `public/flowers/red-tulip.webp`        | Kulbir                    | https://www.pexels.com/photo/red-flower-in-close-up-photography-10817651/                  | Pexels License |
+| `public/flower/red-carnation.webp`     | AmberLily                 | https://www.pinterest.com/pin/776800635776421120/                                          | Pinterest      |
+| `public/flowers/pink-rose.webp`        | Amelia Cui                | https://www.pexels.com/photo/close-up-of-a-pink-rose-lying-on-a-handwritten-note-13635648/ | Pexels License |
+| `public/flowers/orange-tulip.webp`     | Yvonne Gustafsson         | https://www.pexels.com/photo/vibrant-orange-tulip-in-sunlit-interior-setting-36929717/     | Pexels License |
+| `public/flowers/pink-tulip.webp`       | Fiona Murray              | https://www.pexels.com/photo/pastel-pink-tulip-against-soft-purple-background-37947522/    | Pexels License |
+| `public/flowers/pink-eustoma.webp`     | solod_sha Content creator | https://www.pexels.com/photo/flowers-in-a-glass-of-champagne-7663741/                      | Pexels Lecense |
+| `public/flowers/yellow-daffodil.webp`  | Kristina Paukshtite       | https://www.pexels.com/photo/selective-photography-of-yellow-petaled-flower-983300/        | Pexels License |
+| `public/flowers/purple-tulip.webp`     | kokokara                  | https://www.pexels.com/photo/close-up-on-pink-tulip-flower-4164060/                        | Pexels License |
 
 | Слайдери                      | Автор            | Джерело                                                                       | Ліцензія       |
 | ----------------------------- | :--------------- | ----------------------------------------------------------------------------- | -------------- |
