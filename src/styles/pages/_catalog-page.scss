@@ -15,20 +15,11 @@ $swatch-size: 36px;
     &__search {
         width: 220px;
         max-width: 100%;
-        display: block;
-        padding: $space-2 $space-3;
-        font-family: $font-body;
-        font-size: $text-base;
-        color: $color-text;
-        background: $color-surface;
-        border: 1px solid $color-border;
-        border-radius: $radius-sm;
-        transition: width $transition-base, border-color $transition-base;
+        transition: width $transition-base;
     
         &:hover,
         &:focus {
             width: 360px;
-            border-color: $color-button-highlight;
         }
 
     }

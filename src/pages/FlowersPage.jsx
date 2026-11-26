@@ -13,6 +13,7 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Spinner } from "../components/Spinner";
 import { useScrollToTop } from "../hooks/useScrollToTop";
 import { ErrorMessage } from "../components/ErrorMessage";
+import { SearchInput } from "../components/SearchInput";
 
 const SEARCH_FIELDS = ['name']
 const FILTERS = {
@@ -74,16 +75,14 @@ export function FlowersPage() {
         <section className="catalog">
             <h1>Квіти</h1>
             <div className="catalog__toolbar">
-                <input
-                    type="search"
-                    id="flower-search"
-                    autoComplete="off"
-                    className="catalog__search"
-                    placeholder="Пошук за назвою"
-                    aria-label="Пошук квітів за назвою"
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                />
+                <div className="catalog__search">
+                    <SearchInput
+                        id="flower-search"
+                        label="Пошук квітів за назвою"
+                        value={query}
+                        onChange={setQuery}
+                    />
+                </div>
                 <select
                     id="flower-sort"
                     name="sort"

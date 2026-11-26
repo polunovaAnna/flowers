@@ -12,6 +12,7 @@ import { PRICE_NAME_SORTERS, SORT_OPTIONS } from '../utils/sorters';
 import { useScrollToTop } from "../hooks/useScrollToTop";
 import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE } from "../constants";
 import { ErrorMessage } from '../components/ErrorMessage';
+import { SearchInput } from '../components/SearchInput';
 
 const SEARCH_FIELDS = ['name'];
 const FILTERS = {
@@ -66,16 +67,14 @@ export function BouquetsPage() {
         <section className="catalog">
             <h1>Готові букети</h1>
             <div className="catalog__toolbar">
-                <input
-                    type="search"
-                    id="bouquet-search"
-                    autoComplete="off"
-                    className="catalog__search"
-                    placeholder="Пошук за назвою"
-                    aria-label="Пошук букетів за назвою"
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                />
+                <div className="catalog__search">
+                    <SearchInput
+                        id="bouquet-search"
+                        label="Пошук букетів за назвою"
+                        value={query}
+                        onChange={setQuery}
+                    />
+                </div>
                 <select
                     id="bouquet-sort"
                     name="sort"
