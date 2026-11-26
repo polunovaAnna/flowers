@@ -71,14 +71,14 @@ export function FlowersPage() {
     if (error) return <ErrorMessage message={error.message} />;
 
     return (
-        <section className="flowers-page">
+        <section className="catalog">
             <h1>Квіти</h1>
-            <div className="flowers-page__toolbar">
+            <div className="catalog__toolbar">
                 <input
                     type="search"
                     id="flower-search"
                     autoComplete="off"
-                    className="flowers-page__search"
+                    className="catalog__search"
                     placeholder="Пошук за назвою"
                     aria-label="Пошук квітів за назвою"
                     value={query}
@@ -87,7 +87,7 @@ export function FlowersPage() {
                 <select
                     id="flower-sort"
                     name="sort"
-                    className="flowers-page__sort"
+                    className="catalog__sort"
                     aria-label="Сортування квітів"
                     value={sortBy}
                     onChange={(event) => setSortBy(event.target.value)}
@@ -100,7 +100,7 @@ export function FlowersPage() {
                 </select>
                 <button
                     type="button"
-                    className="flowers-page__filters-toggle"
+                    className="catalog__filters-toggle"
                     onClick={() => setFiltersOpen((open) => !open)}
                     aria-expanded={filtersOpen}
                     aria-controls="flowers-filters"
@@ -110,15 +110,15 @@ export function FlowersPage() {
                 </button>
             </div>
 
-            <div className="flowers-page__layout">
+            <div className="catalog__layout">
                 <aside
                     id="flowers-filters"
-                    className={`flowers-page__filters ${filtersOpen ? 'flowers-page__filters--open' : ''}`}
+                    className={`catalog__filters ${filtersOpen ? 'catalog__filters--open' : ''}`}
                 >
-                    <fieldset className="flowers-page__filter">
+                    <fieldset className="catalog__filter">
                         <legend>Колір</legend>
                         {colors.map((color) => (
-                            <label key={color} className="flowers-page__checkbox">
+                            <label key={color} className="catalog__checkbox">
                                 <input
                                     type="checkbox"
                                     checked={(selected.color ?? []).includes(color)}
@@ -128,10 +128,10 @@ export function FlowersPage() {
                             </label>
                         ))}
                     </fieldset>
-                    <fieldset className="flowers-page__filter">
+                    <fieldset className="catalog__filter">
                         <legend>Нагода</legend>
                         {occasions.map((occasion) => (
-                            <label key={occasion} className="flowers-page__checkbox">
+                            <label key={occasion} className="catalog__checkbox">
                                 <input
                                     type="checkbox"
                                     checked={(selected.occasion ?? []).includes(occasion)}
@@ -141,7 +141,7 @@ export function FlowersPage() {
                             </label>
                         ))}
                     </fieldset>
-                    <fieldset className="flowers-page__filter">
+                    <fieldset className="catalog__filter">
                         <legend>Ціна</legend>
                         <PriceRange
                             bounds={priceBounds}
@@ -150,12 +150,12 @@ export function FlowersPage() {
                         />
                     </fieldset>
                 </aside>
-                <div className="flowers-page__results">
+                <div className="catalog__results">
                     {visibleItems.length === 0 ? (
                         <p>Нічого не знайдено</p>
                     ) : (
                         <>
-                            <ul className="flowers-page__grid">
+                            <ul className="catalog__grid">
                                 {pageItems.map((flower, index) => (
                                     <li key={flower.id}>
                                         <FlowerCard flower={flower} priority={index < 3}/>

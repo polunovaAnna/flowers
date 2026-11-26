@@ -63,14 +63,14 @@ export function BouquetsPage() {
     if (error) return <ErrorMessage message={error.message} />;
 
     return (
-        <section className="bouquets-page">
+        <section className="catalog">
             <h1>Готові букети</h1>
-            <div className="flowers-page__toolbar">
+            <div className="catalog__toolbar">
                 <input
                     type="search"
                     id="bouquet-search"
                     autoComplete="off"
-                    className="flowers-page__search"
+                    className="catalog__search"
                     placeholder="Пошук за назвою"
                     aria-label="Пошук букетів за назвою"
                     value={query}
@@ -79,7 +79,7 @@ export function BouquetsPage() {
                 <select
                     id="bouquet-sort"
                     name="sort"
-                    className="flowers-page__sort"
+                    className="catalog__sort"
                     aria-label="Сортування букетів"
                     value={sortBy}
                     onChange={(event) => setSortBy(event.target.value)}
@@ -92,7 +92,7 @@ export function BouquetsPage() {
                 </select>
                 <button
                     type="button"
-                    className="flowers-page__filters-toggle"
+                    className="catalog__filters-toggle"
                     onClick={() => setFiltersOpen((open) => !open)}
                     aria-expanded={filtersOpen}
                     aria-controls="bouquet-filters"
@@ -101,15 +101,15 @@ export function BouquetsPage() {
                     {activeFiltersCount > 0 && ` (${activeFiltersCount})`}
                 </button>
             </div>
-            <div className="flowers-page__layout">
+            <div className="catalog__layout">
                 <aside
                     id="bouquet-filters"
-                    className={`flowers-page__filters ${filtersOpen ? 'flowers-page__filters--open' : ''}`}
+                    className={`catalog__filters ${filtersOpen ? 'catalog__filters--open' : ''}`}
                 >
-                    <fieldset className="flowers-page__filter">
+                    <fieldset className="catalog__filter">
                         <legend>Нагода</legend>
                         {occasions.map((occasion) => (
-                            <label key={occasion} className="flowers-page__checkbox">
+                            <label key={occasion} className="catalog__checkbox">
                                 <input
                                     type="checkbox"
                                     checked={(selected.occasion ?? []).includes(occasion)}
@@ -119,7 +119,7 @@ export function BouquetsPage() {
                             </label>
                         ))}
                     </fieldset>
-                    <fieldset className="flowers-page__filter">
+                    <fieldset className="catalog__filter">
                         <legend>Ціна</legend>
                         <PriceRange
                             bounds={priceBounds}
@@ -129,12 +129,12 @@ export function BouquetsPage() {
                     </fieldset>
                 </aside>
 
-                <div className="flowers-page__results">
+                <div className="catalog__results">
                     {visibleItems.length === 0 ? (
                         <p>Нічого не знайдено</p>
                     ) : (
                         <>
-                            <ul className="flowers-page__grid">
+                            <ul className="catalog__grid">
                                 {pageItems.map((bouquet) => (
                                     <li key={bouquet.id}>
                                         <BouquetCard bouquet={bouquet} />
