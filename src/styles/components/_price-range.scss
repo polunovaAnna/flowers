@@ -96,5 +96,15 @@ $thumb-size: 20px;
         &:focus-visible {
             outline: none;
         }
+
+        &:focus-visible::-webkit-slider-thumb {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+        
+        &:focus-visible::-moz-range-thumb {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
     }
 }

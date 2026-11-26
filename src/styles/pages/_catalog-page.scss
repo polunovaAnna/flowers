@@ -29,11 +29,6 @@
             width: 360px;
             border-color: $color-button-highlight;
         }
-    
-        &:focus-visible {
-            outline: 2px solid $color-focus;
-            outline-offset: 2px;
-        }
 
     }
 
@@ -80,11 +75,6 @@
         &:hover {
             border-color: $color-button-highlight;
         }
-
-        &:focus-visible {
-            outline: 2px solid $color-focus;
-            outline-offset: 2px;
-        }
     }
 
     &__filter {
@@ -116,11 +106,6 @@
     
         &:hover {
             border-color: $color-button-highlight;
-        }
-    
-        &:focus-visible {
-            outline: 2px solid $color-focus;
-            outline-offset: 2px;
         }
     }
 
