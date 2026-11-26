@@ -4,7 +4,7 @@ import { FlowerCard } from "../components/FlowerCard";
 import { useFetch } from "../hooks/useFetch";
 import { useFilteredList } from "../hooks/useFilteredList";
 import { PRICE_NAME_SORTERS, SORT_OPTIONS } from "../utils/sorters";
-import { COLOR_LABELS, OCCASION_LABELS } from "../utils/labels";
+import { COLOR_LABELS, COLOR_SWATCHES, OCCASION_LABELS } from "../utils/labels";
 import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE} from "../constants";
 import { PriceRange } from "../components/PriceRange";
 import { Pagination } from "../components/Pagination";
@@ -117,16 +117,28 @@ export function FlowersPage() {
                 >
                     <fieldset className="catalog__filter">
                         <legend>Колір</legend>
-                        {colors.map((color) => (
-                            <label key={color} className="catalog__checkbox">
-                                <input
-                                    type="checkbox"
-                                    checked={(selected.color ?? []).includes(color)}
-                                    onChange={() => toggleFilter('color', color)}
-                                />
-                                {COLOR_LABELS[color] ?? color}
-                            </label>
-                        ))}
+                        <div className="catalog__swatches">
+                            {colors.map((color) => (
+                                <label
+                                    key={color}
+                                    className="catalog__swatch"
+                                    title={COLOR_LABELS[color] ?? color}
+                                >
+                                    <input
+                                        type="checkbox"
+                                        className="catalog__swatch-input"
+                                        aria-label={COLOR_LABELS[color] ?? color}
+                                        checked={(selected.color ?? []).includes(color)}
+                                        onChange={() => toggleFilter('color', color)}
+                                    />
+                                    <span
+                                        className="catalog__swatch-dot"
+                                        style={{ "--swatch": COLOR_SWATCHES[color] }}
+                                        aria-hidden="true"
+                                    />
+                                </label>
+                            ))}
+                        </div>
                     </fieldset>
                     <fieldset className="catalog__filter">
                         <legend>Нагода</legend>
