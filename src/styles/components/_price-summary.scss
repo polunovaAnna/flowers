@@ -10,14 +10,6 @@
         margin: 0;
         font-family: $font-heading;
         font-size: $text-lg;
-
-        strong {
-            color: $color-text;
-        }
-    }
-
-    &__total {
-        margin: 0;
     }
 
     &__meta {
@@ -40,5 +32,15 @@
         background: $color-surface;
         font: inherit;
         cursor: pointer;
+        transition: border-color $transition-base;
+
+        &:hover:not(:disabled) {
+            border-color: $color-button-highlight;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
     }
 }
