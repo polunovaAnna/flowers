@@ -1,0 +1,52 @@
+@use '../variables' as *;
+
+$swatch-size: 36px;
+
+.color-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__swatch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $swatch-size;
+        height: $swatch-size;
+        background: var(--swatch);
+        border: 2px solid $color-border;
+        border-radius: $radius-sm;
+        transition: border-color $transition-base;
+    }
+
+    &__input:hover+&__swatch {
+        border-color: $color-button-highlight;
+    }
+
+    &__input:focus-visible+&__swatch {
+        outline: 2px solid $color-focus;
+        outline-offset: 2px;
+    }
+
+    &__input:checked+&__swatch::after {
+        content: "✓";
+        font-weight: 700;
+        color: $color-surface;
+        text-shadow: 0 0 2px $color-text, 0 0 2px $color-text;
+    }
+}

@@ -1,6 +1,5 @@
 @use '../variables' as *;
 @use '../mixins' as *;
-$swatch-size: 36px;
 
 .catalog {
     &__grid {
@@ -118,55 +117,6 @@ $swatch-size: 36px;
             accent-color: $color-accent-deep;
             cursor: pointer;
         }
-    }
-
-    &__swatches {
-        display: flex;
-        flex-wrap: wrap;
-        gap: $space-2;
-    }
-
-    &__swatch {
-        position: relative;
-        cursor: pointer;
-    }
-
-    &__swatch-input {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    &__swatch-dot {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: $swatch-size;
-        height: $swatch-size;
-        background: var(--swatch);
-        border: 2px solid $color-border;
-        border-radius: $radius-sm;
-        transition: border-color $transition-base;
-    }
-
-    &__swatch-input:hover+&__swatch-dot {
-        border-color: $color-button-highlight;
-    }
-    
-    &__swatch-input:focus-visible+&__swatch-dot {
-        outline: 2px solid $color-focus;
-        outline-offset: 2px;
-    }
-    
-    &__swatch-input:checked+&__swatch-dot::after {
-        content: "✓";
-        font-weight: 700;
-        color: $color-surface;
-        text-shadow: 0 0 2px $color-text, 0 0 2px $color-text;
     }
 
     @include tablet-up {

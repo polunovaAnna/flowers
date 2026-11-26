@@ -4,7 +4,7 @@ import { FlowerCard } from "../components/FlowerCard";
 import { useFetch } from "../hooks/useFetch";
 import { useFilteredList } from "../hooks/useFilteredList";
 import { PRICE_NAME_SORTERS, SORT_OPTIONS } from "../utils/sorters";
-import { COLOR_LABELS, COLOR_SWATCHES, OCCASION_LABELS } from "../utils/labels";
+import { OCCASION_LABELS } from "../utils/labels";
 import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE} from "../constants";
 import { PriceRange } from "../components/PriceRange";
 import { Pagination } from "../components/Pagination";
@@ -14,6 +14,7 @@ import { Spinner } from "../components/Spinner";
 import { useScrollToTop } from "../hooks/useScrollToTop";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { SearchInput } from "../components/SearchInput";
+import { ColorFilter } from "../components/ColorFilter";
 
 const SEARCH_FIELDS = ['name']
 const FILTERS = {
@@ -49,12 +50,6 @@ export function FlowersPage() {
     const activeFiltersCount =
         Object.values(selected).reduce((sum, values) => sum + values.length, 0) +
         (priceRange.min !== '' || priceRange.max !== '' ? 1 : 0);
-
-    const colors = useMemo(() => {
-        if (!flowers) return [];
-        const available = new Set(flowers.map((f) => f.color));
-        return Object.keys(COLOR_LABELS).filter((key) => available.has(key));
-    }, [flowers]);
 
     const occasions = useMemo(() => {
         if (!flowers) return [];
@@ -116,28 +111,11 @@ export function FlowersPage() {
                 >
                     <fieldset className="catalog__filter">
                         <legend>Колір</legend>
-                        <div className="catalog__swatches">
-                            {colors.map((color) => (
-                                <label
-                                    key={color}
-                                    className="catalog__swatch"
-                                    title={COLOR_LABELS[color] ?? color}
-                                >
-                                    <input
-                                        type="checkbox"
-                                        className="catalog__swatch-input"
-                                        aria-label={COLOR_LABELS[color] ?? color}
-                                        checked={(selected.color ?? []).includes(color)}
-                                        onChange={() => toggleFilter('color', color)}
-                                    />
-                                    <span
-                                        className="catalog__swatch-dot"
-                                        style={{ "--swatch": COLOR_SWATCHES[color] }}
-                                        aria-hidden="true"
-                                    />
-                                </label>
-                            ))}
-                        </div>
+                        <ColorFilter
+                            flowers={flowers}
+                            selected={selected.color ?? []}
+                            onToggle={(color)=>toggleFilter("color", color)}
+                        />
                     </fieldset>
                     <fieldset className="catalog__filter">
                         <legend>Нагода</legend>
