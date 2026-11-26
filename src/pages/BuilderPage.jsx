@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useConstructorData } from "../hooks/useConstructorData";
 import { useBouquetBuilder } from "../hooks/useBouquetBuilder";
 import { calcPrice } from "../utils/calcPrice";
@@ -14,17 +14,23 @@ import { ErrorMessage } from "../components/ErrorMessage";
 import { useFilteredList } from "../hooks/useFilteredList";
 import { PRICE_NAME_SORTERS } from "../utils/sorters";
 import { SearchInput } from "../components/SearchInput";
+import { ColorFilter } from "../components/ColorFilter";
 
 const SEARCH_FIELDS = ["name"];
+const FILTERS = { color: (flower) => flower.color };
 
 export function BuilderPage() {
     const { flowers, wrappers, complexityLevels, error, isLoading } = useConstructorData();
     const builder = useBouquetBuilder();
 
-    const { visibleItems, query, setQuery } = useFilteredList(flowers, {
-        searchFields: SEARCH_FIELDS,
-        sorters: PRICE_NAME_SORTERS
-    });
+    const { visibleItems, query, setQuery, selected, toggleFilter } =
+        useFilteredList(flowers, {
+            searchFields: SEARCH_FIELDS,
+            sorters: PRICE_NAME_SORTERS,
+            filters: FILTERS
+        });
+    const [filtersOpen, setFiltersOpen] = useState(false);
+    const activeFiltersCount = (selected.color ?? []).length;
 
     const complexityId = getComplexityId(complexityLevels, builder.totalCount);
 
@@ -65,12 +71,35 @@ export function BuilderPage() {
             <h1>Конструктор букетів</h1>
             <div className="builder">
                 <div className="builder__picker">
-                    <SearchInput
-                        id="builder-search"
-                        label="Пошук квітів за назвою"
-                        value={query}
-                        onChange={setQuery}
-                    />
+                    <div className="builder__toolbar">
+                        <div className="builder__search">
+                            <SearchInput
+                                id="builder-search"
+                                label="Пошук квітів за назвою"
+                                value={query}
+                                onChange={setQuery}
+                            />
+                        </div>
+                        <button
+                            type="button"
+                            className="builder__filters-toggle"
+                            onClick={() => setFiltersOpen((open) => !open)}
+                            aria-expanded={filtersOpen}
+                            aria-controls="builder-filters"
+                        >
+                            Фільтри{activeFiltersCount > 0 && ` (${activeFiltersCount})`}
+                        </button>
+                    </div>
+                    {filtersOpen && (
+                        <div id="builder-filters" className="builder__filters">
+                            <span className="builder__filters-label">Колір</span>
+                            <ColorFilter
+                                flowers={flowers}
+                                selected={selected.color ?? []}
+                                onToggle={(color) => toggleFilter("color", color)}
+                            />
+                        </div>
+                    )}
                     <div className="builder__flowers" aria-label="Квіти">
                         {visibleItems.length === 0 && <p>Нічого не знайдено</p>}
                         {visibleItems.map((flower) => (

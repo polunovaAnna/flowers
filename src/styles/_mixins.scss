@@ -26,3 +26,19 @@
         display: none;
     }
 }
+
+@mixin pink-button {
+    padding: $space-2 $space-3;
+    font-family: $font-body;
+    font-size: $text-base;
+    color: $color-text;
+    background: $color-button;
+    border: 1px solid transparent;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: border-color $transition-base;
+
+    &:hover {
+        border-color: $color-button-highlight;
+    }
+}
