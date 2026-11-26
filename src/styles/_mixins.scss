@@ -18,3 +18,11 @@
     margin-inline: auto;
     padding-inline: $space-3;
 }
+
+@mixin hide-scrollbar {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

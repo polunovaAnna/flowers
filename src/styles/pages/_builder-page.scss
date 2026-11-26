@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .builder-page {
     display: flex;
@@ -16,6 +17,7 @@
     gap: $space-4;
 
     &__flowers {
+        @include hide-scrollbar;
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: max-content;

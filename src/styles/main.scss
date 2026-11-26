@@ -80,6 +80,7 @@ h4 {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -110,15 +111,4 @@ input, select, textarea {
 :focus-visible {
     outline: 2px solid $color-focus;
     outline-offset: 2px;
-}
-
-html,
-.app-scroll-area,
-.builder__flowers {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 }
