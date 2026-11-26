@@ -5,7 +5,7 @@ import { calcPrice } from "../utils/calcPrice";
 import { getComplexityId } from "../utils/getComplexityId";
 import { FlowerCard } from "../components/FlowerCard";
 import { QuantityStepper } from "../components/QuantityStepper";
-import { MAX_FLOWERS } from "../constants";
+import { MAX_FLOWERS, DEFAULT_WRAPPER_ID } from "../constants";
 import { stepWrapper } from "../utils/stepWrapper";
 import { BouquetPreview } from "../components/BouquetPreview";
 import { PriceSummary } from "../components/PriceSummary";
@@ -88,6 +88,7 @@ export function BuilderPage() {
                         price={price}
                         totalCount={builder.totalCount}
                         maxCount={MAX_FLOWERS}
+                        canClear={builder.totalCount > 0 || builder.wrapperId !== DEFAULT_WRAPPER_ID}
                         onClear={builder.clear}
                     />
                 </div>

@@ -1,4 +1,4 @@
-export function PriceSummary({ price, totalCount, maxCount, onClear }) {
+export function PriceSummary({ price, totalCount, maxCount, canClear, onClear }) {
     const isFull = totalCount >= maxCount;
     const {complexity, total } = price;
 
@@ -8,8 +8,9 @@ export function PriceSummary({ price, totalCount, maxCount, onClear }) {
                 Разом {total} грн
             </p>
             <p className="price-summary__meta">
-                Квітів: {totalCount} / {maxCount} · Складність:{" "}
-				{complexity?.name ?? "—"}
+                Квітів: {totalCount} / {maxCount} | {" "}
+                {complexity?.name ?? "—"} складність
+                {complexity?.amount > 0 && ` (+${complexity.amount} грн)`}
             </p>
             {isFull && (
 				<p className="price-summary__limit" role="status">
@@ -20,7 +21,7 @@ export function PriceSummary({ price, totalCount, maxCount, onClear }) {
 				type="button"
 				className="price-summary__clear"
 				onClick={onClear}
-				disabled={totalCount === 0}
+				disabled={!canClear}
 			>
 				Очистити
 			</button>
