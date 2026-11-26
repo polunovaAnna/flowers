@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .home-page {
     max-width: 720px;
@@ -40,10 +41,10 @@
     a {
         color: $color-accent-deep;
     }
-}
 
-@media (min-width: $breakpoint-tablet) {
-    .home-page__principles {
-        grid-template-columns: repeat(3, 1fr);
+    @include tablet-up {
+        &__principles {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }

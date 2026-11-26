@@ -1,6 +1,8 @@
 @use '../variables' as *;
 
 .salon-map {
+    min-height: 360px;
+    
     &__canvas {
         width: 100%;
         height: 360px;
