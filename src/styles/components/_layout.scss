@@ -27,14 +27,11 @@
 }
 
 .app-main {
-    width: 100%;
-    max-width: $container-max;
-    margin: 0 auto;
-    padding: $space-4 $space-3;
-    box-sizing: border-box;
+    @include container;
+    padding-block: $space-4;
 }
 
-@media (min-width: #{$breakpoint-tablet}) {
+@include tablet-up {
     .app-scroll-area:has(.builder-page) {
         overflow-y: hidden;
     }
