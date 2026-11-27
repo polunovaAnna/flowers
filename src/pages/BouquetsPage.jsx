@@ -13,6 +13,7 @@ import { useScrollToTop } from "../hooks/useScrollToTop";
 import { MOBILE_QUERY, PAGE_SIZE_DESKTOP, PAGE_SIZE_MOBILE } from "../constants";
 import { ErrorMessage } from '../components/ErrorMessage';
 import { SearchInput } from '../components/SearchInput';
+import { FilterGroup } from '../components/FilterGroup';
 
 const SEARCH_FIELDS = ['name'];
 const FILTERS = {
@@ -105,8 +106,7 @@ export function BouquetsPage() {
                     id="bouquet-filters"
                     className={`catalog__filters ${filtersOpen ? 'catalog__filters--open' : ''}`}
                 >
-                    <fieldset className="catalog__filter">
-                        <legend>Нагода</legend>
+                    <FilterGroup title="Нагода">
                         {occasions.map((occasion) => (
                             <label key={occasion} className="catalog__checkbox">
                                 <input
@@ -117,15 +117,14 @@ export function BouquetsPage() {
                                 {OCCASION_LABELS[occasion] ?? occasion}
                             </label>
                         ))}
-                    </fieldset>
-                    <fieldset className="catalog__filter">
-                        <legend>Ціна</legend>
+                    </FilterGroup>
+                    <FilterGroup title="Ціна">
                         <PriceRange
                             bounds={priceBounds}
                             value={priceRange}
                             onChange={setPriceRange}
                         />
-                    </fieldset>
+                    </FilterGroup>
                 </aside>
 
                 <div className="catalog__results">

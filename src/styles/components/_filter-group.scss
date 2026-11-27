@@ -1,0 +1,17 @@
+@use '../variables' as *;
+
+.filter-group {
+    min-width: 0;
+    margin: 0;
+    padding: $space-3;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+
+    &__title {
+        padding: 0 $space-2;
+        font-family: $font-heading;
+        font-size: $text-lg;
+        color: $color-text;
+    }
+}

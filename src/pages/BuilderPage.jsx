@@ -15,6 +15,7 @@ import { useFilteredList } from "../hooks/useFilteredList";
 import { PRICE_NAME_SORTERS } from "../utils/sorters";
 import { SearchInput } from "../components/SearchInput";
 import { ColorFilter } from "../components/ColorFilter";
+import { FilterGroup } from "../components/FilterGroup";
 
 const SEARCH_FIELDS = ["name"];
 const FILTERS = { color: (flower) => flower.color };
@@ -91,13 +92,14 @@ export function BuilderPage() {
                         </button>
                     </div>
                     {filtersOpen && (
-                        <div id="builder-filters" className="builder__filters">
-                            <span className="builder__filters-label">Колір</span>
-                            <ColorFilter
-                                flowers={flowers}
-                                selected={selected.color ?? []}
-                                onToggle={(color) => toggleFilter("color", color)}
-                            />
+                        <div id="builder-filters">
+                            <FilterGroup title="Колір">
+                                <ColorFilter
+                                    flowers={flowers}
+                                    selected={selected.color ?? []}
+                                    onToggle={(color) => toggleFilter("color", color)}
+                                />
+                            </FilterGroup>
                         </div>
                     )}
                     <div className="builder__flowers" aria-label="Квіти">

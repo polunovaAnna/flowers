@@ -68,22 +68,6 @@
         }
     }
 
-    &__filter {
-        min-width: 0;
-        margin: 0;
-        padding: $space-3;
-        background: $color-surface;
-        border: 1px solid $color-border;
-        border-radius: $radius-md;
-
-        legend {
-            padding: 0 $space-2;
-            font-family: $font-heading;
-            font-size: $text-lg;
-            color: $color-text;
-        }
-    }
-
     &__filters-toggle {
         @include pink-button;
     }

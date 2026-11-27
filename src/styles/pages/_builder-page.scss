@@ -37,20 +37,7 @@ $builder-thumb: 100px;
     &__filters-toggle {
         @include pink-button;
         flex-shrink: 0;
-    }
-    
-    &__filters {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: $space-3;
-    }
-    
-    &__filters-label {
-        font-family: $font-heading;
-        font-size: $text-lg;
-        color: $color-text;
-    }   
+    } 
 
     &__flowers {
         @include hide-scrollbar;

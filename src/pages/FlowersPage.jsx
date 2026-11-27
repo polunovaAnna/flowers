@@ -15,6 +15,7 @@ import { useScrollToTop } from "../hooks/useScrollToTop";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { SearchInput } from "../components/SearchInput";
 import { ColorFilter } from "../components/ColorFilter";
+import { FilterGroup } from "../components/FilterGroup";
 
 const SEARCH_FIELDS = ['name']
 const FILTERS = {
@@ -109,16 +110,14 @@ export function FlowersPage() {
                     id="flowers-filters"
                     className={`catalog__filters ${filtersOpen ? 'catalog__filters--open' : ''}`}
                 >
-                    <fieldset className="catalog__filter">
-                        <legend>Колір</legend>
+                    <FilterGroup title="Колір">
                         <ColorFilter
                             flowers={flowers}
                             selected={selected.color ?? []}
                             onToggle={(color)=>toggleFilter("color", color)}
                         />
-                    </fieldset>
-                    <fieldset className="catalog__filter">
-                        <legend>Нагода</legend>
+                    </FilterGroup>
+                    <FilterGroup title="Нагода">
                         {occasions.map((occasion) => (
                             <label key={occasion} className="catalog__checkbox">
                                 <input
@@ -129,15 +128,15 @@ export function FlowersPage() {
                                 {OCCASION_LABELS[occasion] ?? occasion}
                             </label>
                         ))}
-                    </fieldset>
-                    <fieldset className="catalog__filter">
+                    </FilterGroup>
+                    <FilterGroup title="Ціна">
                         <legend>Ціна</legend>
                         <PriceRange
                             bounds={priceBounds}
                             value={priceRange}
                             onChange={setPriceRange}
                         />
-                    </fieldset>
+                    </FilterGroup>
                 </aside>
                 <div className="catalog__results">
                     {visibleItems.length === 0 ? (
