@@ -25,13 +25,15 @@ const FILTERS = {
 
 export function FlowersPage() {
     const { data: flowers, error, isLoading } = useFetch(fetchFlowers);
+    const scrollToTop = useScrollToTop();
 
     const { visibleItems, query, setQuery, sortBy, setSortBy, selected, toggleFilter, priceRange, setPriceRange } = useFilteredList(
         flowers, 
         {
             searchFields: SEARCH_FIELDS,
             sorters: PRICE_NAME_SORTERS,
-            filters: FILTERS
+            filters: FILTERS,
+            onChange: scrollToTop
         }
     );
     const [filtersOpen, setFiltersOpen] = useState(false);
@@ -42,7 +44,6 @@ export function FlowersPage() {
         isMobile ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP
     );
 
-    const scrollToTop = useScrollToTop();
     const handlePageChange = (nextPage) => {
         setPage(nextPage);
         scrollToTop();

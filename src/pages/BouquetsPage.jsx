@@ -23,6 +23,7 @@ const FILTERS = {
 export function BouquetsPage() {
     const { bouquets, error, isLoading } = useBouquets();
     const [filtersOpen, setFiltersOpen] = useState(false);
+    const scrollToTop = useScrollToTop();
 
     const {
         visibleItems, query, setQuery, sortBy, setSortBy,
@@ -31,6 +32,7 @@ export function BouquetsPage() {
         searchFields: SEARCH_FIELDS,
         sorters: PRICE_NAME_SORTERS,
         filters: FILTERS,
+        onChange: scrollToTop
     });
 
     const isMobile = useMediaQuery(MOBILE_QUERY);
@@ -55,7 +57,6 @@ export function BouquetsPage() {
         Object.values(selected).reduce((sum, values) => sum + values.length, 0) +
         (priceRange.min !== '' || priceRange.max !== '' ? 1 : 0);
 
-    const scrollToTop = useScrollToTop();
     const handlePageChange = (nextPage) => {
         setPage(nextPage);
         scrollToTop();

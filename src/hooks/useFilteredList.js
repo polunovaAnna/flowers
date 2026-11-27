@@ -8,7 +8,7 @@ const toBound = (value, fallback) => (value === "" ? fallback : Number(value));
 
 export function useFilteredList(
 	items,
-	{ searchFields, sorters, filters = NO_FILTERS },
+	{ searchFields, sorters, filters = NO_FILTERS, onChange },
 ) {
 	const [query, setQuery] = useState("");
 	const [sortBy, setSortBy] = useState("default");
@@ -17,7 +17,13 @@ export function useFilteredList(
 	const debouncedQuery = useDebounce(query, SEARCH_DEBOUNCE_MS);
 	const debouncedPriceRange = useDebounce(priceRange, PRICE_DEBOUNCE_MS);
 
+	const withNotify = (setter) => (value) => {
+		onChange?.();
+		setter(value);
+	};
+
 	const toggleFilter = (name, value) => {
+		onChange?.();
 		setSelected((prev) => {
 			const current = prev[name] ?? [];
 			const next = current.includes(value)
@@ -71,12 +77,12 @@ export function useFilteredList(
 	return {
 		visibleItems,
 		query,
-		setQuery,
+		setQuery: withNotify(setQuery),
 		sortBy,
-		setSortBy,
+		setSortBy: withNotify(setSortBy),
 		selected,
 		toggleFilter,
 		priceRange,
-		setPriceRange,
+		setPriceRange: withNotify(setPriceRange),
 	};
 }
