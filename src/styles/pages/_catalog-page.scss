@@ -39,8 +39,12 @@
     
     &__filters {
         display: none;
+        flex: 0 0 220px;
         flex-direction: column;
-        gap: $space-3;
+        position: sticky;
+        top: $space-4;
+        max-height: calc(100dvh - #{$header-height + $slider-height-inner + $space-5});
+        overflow-y: auto;
     
         &--open {
             display: flex;
