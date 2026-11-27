@@ -1,6 +1,7 @@
 export const SALON = {
 	address: "вул. Сковороди, 2, Київ",
 	phone: "+380 44 123 45 67",
+	photo: "/slider/salon.webp",
 	hours: [
 		{ days: "Пн-Сб", time: "9:00-20:00" },
 		{ days: "Нд", time: "10:00-18:00" },

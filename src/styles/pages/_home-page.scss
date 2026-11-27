@@ -2,11 +2,34 @@
 @use '../mixins' as *;
 
 .home-page {
-    max-width: 720px;
-
     &__lead {
         font-size: $text-lg;
         color: $color-text;
+    }
+
+    &__intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: $space-4;
+        margin-bottom: $space-5;
+    }
+
+    &__subtitle {
+        font-size: $text-2xl;
+    }
+
+    &__photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+    
+        &--empty {
+            background: $color-accent;
+        }
     }
 
     &__principles {
@@ -45,6 +68,12 @@
     @include tablet-up {
         &__principles {
             grid-template-columns: repeat(3, 1fr);
+        }
+
+        &__intro {
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: $space-5;
+            align-items: start;
         }
     }
 }

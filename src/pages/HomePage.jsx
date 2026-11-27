@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Photo } from "../components/Photo";
+import { SALON } from "../constants";
 
 const PRINCIPLES = [
     { title: 'Без поспіху', text: 'Ніхто не квапить із вибором. Хочеш години три думати над піонами? Ми не підганятимемо, а лише допоможемо.' },
@@ -9,30 +11,40 @@ const PRINCIPLES = [
 export function HomePage() {
     return (
         <section className="home-page">
-            <h1>Про салон</h1>
-                <p className="home-page__lead">
-                    Rosette це квіти без поспіху та примусу. Ми надихались спокоєм кав`ярні: можна просто подивитись,
-                    насолодитись, посидіти й вирішити, коли будеш готовим.
-                </p>
-            <h2>Наша історія</h2>
-                <p>
-                    Ми почали з маленької полиці з квітами біля вікна. Хотіли, щоб купувати букет було приємно,
-                    а не нервово: без черг, без «беріть швидше» і без питань, на які незручно відповідати.
-                    З часом полиця виросла в салон, а ідея лишилась та сама.
-                </p>
-            <h2>Як ми працюємо</h2>
-                <ul className="home-page__principles">
-                    {PRINCIPLES.map(({ title, text }) => (
-                        <li key={title} className="home-page__principle">
-                            <h3>{title}</h3>
-                            <p>{text}</p>
-                        </li>
-                    ))}
-                </ul>
-                <p>
-                    Готові букети чекають у <Link to="/bouquets">каталозі</Link>, а якщо хочеться власного,
-                    збери його в <Link to="/builder">конструкторі</Link> і побачиш ціну одразу.
-                </p>
+            <div className="home-page__intro">
+                <div className="home-page__text">
+                    <h1>Про салон</h1>
+                    <p className="home-page__lead">
+                        Rosette це квіти без поспіху та примусу. Ми надихались спокоєм кав`ярні: можна просто подивитись,
+                        насолодитись, посидіти й вирішити, коли будеш готовим.
+                    </p>
+                    <h2 className="home-page__subtitle">Наша історія</h2>
+                    <p>
+                        Ми почали з маленької полиці з квітами біля вікна. Хотіли, щоб купувати букет було приємно,
+                        а не нервово: без черг, без «беріть швидше» і без питань, на які незручно відповідати.
+                        З часом полиця виросла в салон, а ідея лишилась та сама.
+                    </p>
+                </div>
+                <Photo
+                    src={SALON.photo}
+                    alt="Інтер'єр салону Rosette"
+                    className="home-page__photo"
+                />
+            </div>
+            <h2 className="home-page__subtitle">Як ми працюємо</h2>
+            <ul className="home-page__principles">
+                {PRINCIPLES.map(({ title, text }) => (
+                    <li key={title} className="home-page__principle">
+                        <h3>{title}</h3>
+                        <p>{text}</p>
+                    </li>
+                ))}
+            </ul>
+            <p>
+                Готові букети чекають у <Link to="/bouquets">каталозі</Link>, а якщо
+				хочеться власного, збери його в{" "}
+				<Link to="/builder">конструкторі</Link> і побачиш ціну одразу.
+            </p>
         </section>
     );
 }
