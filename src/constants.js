@@ -22,3 +22,5 @@ export const PRICE_STEP = 5;
 export const PHOTO_SIZE = 300;
 export const PAGE_SIZE_MOBILE = 8;
 export const PAGE_SIZE_DESKTOP = 9;
+export const SLIDE_WIDTH = 1600;
+export const SLIDE_HEIGHT = 900;

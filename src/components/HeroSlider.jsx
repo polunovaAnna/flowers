@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { SLOGAN } from "../constants";
+import { SLIDE_HEIGHT, SLIDE_WIDTH, SLOGAN } from "../constants";
 
 const SLIDES = [
     { src: '/slider/slider-1.webp', alt: 'Букет ніжно-рожевих гвоздик' },
@@ -19,8 +19,17 @@ export function HeroSlider() {
     return (
         <section className={`slider ${isHome ? 'slider--home' : ''}`} aria-roledescription="carousel" aria-label="Фото продукції">
             <div className="slider__track" style={{ transform: `translateX(-${index * 100}%)` }}>
-                {SLIDES.map(({ src, alt }) => (
-                    <img key={src} src={src} alt={alt} className="slider__image" />
+                {SLIDES.map(({ src, alt } ,i) => (
+                    <img
+                        key={src}
+                        src={src}
+                        alt={alt}
+                        className="slider__image"
+                        width={SLIDE_WIDTH}
+                        height={SLIDE_HEIGHT}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        fetchPriority={i === 0 ? "high" : undefined}
+                    />
                 ))}
             </div>
 

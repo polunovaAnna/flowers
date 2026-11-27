@@ -8,7 +8,7 @@ export function Layout() {
 
     const { pathname } = useLocation();
     const scrollToTop = useScrollToTop();
-    const showSlider = pathname !== '/builder';
+    const showSlider = pathname === '/';
 
     useEffect(() => {
         scrollToTop();

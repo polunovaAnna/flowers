@@ -43,7 +43,7 @@
         flex-direction: column;
         position: sticky;
         top: $space-4;
-        max-height: calc(100dvh - #{$header-height + $slider-height-inner + $space-5});
+        max-height: calc(100dvh - #{$header-height + $space-4 * 2});
         overflow-y: auto;
     
         &--open {
