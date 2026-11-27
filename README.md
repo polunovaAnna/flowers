@@ -24,11 +24,12 @@
 | `public/flowers/purple-tulip.webp`     | kokokara                  | https://www.pexels.com/photo/close-up-on-pink-tulip-flower-4164060/                        | Pexels License |
 | `public/flowers/white-eustoma.webp`    | Olya Prutskova            | https://www.pexels.com/photo/white-flower-with-green-leaves-8976496/                       | Pexels License |
 
-| Слайдери                      | Автор            | Джерело                                                                       | Ліцензія       |
+| Головна                       | Автор            | Джерело                                                                       | Ліцензія       |
 | ----------------------------- | :--------------- | ----------------------------------------------------------------------------- | -------------- |
 | `public/slider/slider-3.webp` | Julia Filirovska | https://www.pexels.com/photo/close-up-shot-of-pink-flowers-8236110/           | Pexels License |
 | `public/slider/slider-2.webp` | Berke Can        | https://www.pexels.com/photo/pink-petals-of-flower-15032689/                  | Pexels License |
 | `public/slider/slider-1.webp` | freestock.org    | https://www.pexels.com/photo/shallow-focus-photography-of-red-flowers-219294/ | Pexels License |
+| `public/slider/salon.webp`    | Amina Filkins    | https://www.pexels.com/photo/happy-woman-waving-to-florist-5413717/           | Pexels License |
 
 | Букети                                    | Автор             | Джерело                                                                                 | Ліцензія       |
 | ----------------------------------------- | :---------------- | --------------------------------------------------------------------------------------- | -------------- |
