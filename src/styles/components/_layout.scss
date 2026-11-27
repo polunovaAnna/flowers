@@ -13,9 +13,28 @@
 }
 
 .app-body {
+    --edge-glow: 200px;
+
+    position: relative;
+    isolation: isolate;
     flex: 1 1 auto;
     min-height: 0;
     display: flex;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+            linear-gradient(to right, rgba($rose-soft, 0.25), transparent var(--edge-glow)),
+            linear-gradient(to left, rgba($rose-soft, 0.25), transparent var(--edge-glow));
+    }
+
+    @include mobile {
+        --edge-glow: 80px;
+    }
 }
 
 .app-scroll-area {
