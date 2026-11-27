@@ -1,21 +1,21 @@
 [
     {
-        "id": "tender-morning",
-        "name": "Ніжний ранок",
-        "description": "Легкий букет для невеликого свята",
-        "occasions": ["birthday", "congratulations"],
-        "photo": "/bouquets/tender-morning.webp",
+        "id": "first-confession",
+        "name": "Перше зізнання",
+        "description": "Делікатний прояв ніжності, що огортає теплом і викликає щиру усмішку",
+        "occasions": ["birthday", "congratulations", "romance"],
+        "photo": "/bouquets/first-confession.webp",
         "wrapperId": "white",
         "items": [
             { "flowerId": "pink-peony", "quantity": 5 }
         ]
     },
     {
-        "id": "classic-love",
-        "name": "Класична любов",
-        "description": "Червоні троянди з білими акцентами",
-        "occasions": ["romance", "anniversary"],
-        "photo": "/bouquets/classic-love.webp",
+        "id": "two-poles",
+        "name": "Два полюси",
+        "description": "Сміливий прояв глибоких почуттів, у якому кожна деталь звучить щиро",
+        "occasions": ["romance", "anniversary", "congratulations"],
+        "photo": "/bouquets/two-poles.webp",
         "wrapperId": "none",
         "items": [
             { "flowerId": "red-rose", "quantity": 7 },
@@ -26,8 +26,8 @@
     {
         "id": "spring-sun",
         "name": "Весняне сонце",
-        "description": "Троянди й ромашки для гарного настрою",
-        "occasions": ["spring", "just-because"],
+        "description": "Яскравий букет про легкість і комфорт, який миттєво розганяє буденність",
+        "occasions": ["spring", "just-because", "gratitude"],
         "photo": "/bouquets/spring-sun.webp",
         "wrapperId": "black",
         "items": [
@@ -38,7 +38,7 @@
     {
         "id": "sunny-trio",
         "name": "Сонячне тріо",
-        "description": "Лаконічний весняний комплімент із жовтих тюльпанів",
+        "description": "Ковток сонячної енергії, який дарує відчуття легкості й турботи",
         "occasions": ["spring", "just-because", "gratitude"],
         "photo": "/bouquets/sunny-trio.webp",
         "wrapperId": "clear",
@@ -47,22 +47,22 @@
         ]
     },
     {
-        "id": "first-breath",
-        "name": "Перший подих",
-        "description": "Об'ємний оберемок білих нарцисів у крафтовому папері",
+        "id": "morning-chill",
+        "name": "Ранкова прохолода",
+        "description": "Свіжий настрій весняного пробудження та природної легкості",
         "occasions": ["spring", "gratitude", "birthday"],
-        "photo": "/bouquets/first-breath.webp",
+        "photo": "/bouquets/morning-chill.webp",
         "wrapperId": "craft",
         "items": [
             {"flowerId": "white-daffodil", "quantity": 25}
         ]
     },
     {
-        "id": "silk-harmony",
-        "name": "Шовкова гармонія",
-        "description": "Делікатний букет із білих троянд, рожевих гвоздик та свіжого евкаліпта",
+        "id": "breath-of-love",
+        "name": "Подих закоханості",
+        "description": "Чуттєве поєднання любові й пристрасті, яке змушує серце битися швидше",
         "occasions": ["wedding", "anniversary", "romance"],
-        "photo": "/bouquets/silk-harmony.webp",
+        "photo": "/bouquets/breath-of-love.webp",
         "wrapperId": "none",
         "items": [
             {"flowerId": "white-rose", "quantity": 7},
@@ -71,17 +71,94 @@
         ]
     },
     {
-        "id": "velvet-evening",
-        "name": "Оксамитовий вечір",
-        "description": "Виразний букет із фіолетових еустом, білої гіпсофіли та свіжої зелені",
+        "id": "quiet-admiration",
+        "name": "Тихе захоплення",
+        "description": "Витончена симпатія та делікатна увага до деталей",
         "occasions": ["congratulations", "anniversary", "birthday"],
-        "photo": "/bouquets/velvet-evening.webp",
+        "photo": "/bouquets/quiet-admiration.webp",
         "wrapperId": "none",
         "items": [
             {"flowerId": "purple-eustoma", "quantity": 9},
             {"flowerId": "white-gypsophila", "quantity": 5},
             {"flowerId": "white-daisy", "quantity": 1},
             {"flowerId": "eucalyptus", "quantity": 3}
+        ]
+    },
+    {
+        "id": "crimson-confession",
+        "name": "Багряне зізнання",
+        "description": "Сміливий порив закоханості, що прямо говорить про почуття",
+        "occasions": ["spring", "romance", "anniversary"],
+        "photo": "/bouquets/crimson-confession.webp",
+        "wrapperId": "none",
+        "items": [
+            {"flowerId": "red-tulip", "quantity": 15}
+        ]
+    },
+    {
+        "id": "tender-grace",
+        "name": "Ніжна грація",
+        "description": "Делікатне захоплення і м’яка турбота, які огортають затишком і спокоєм",
+        "occasions": ["romance", "birthday", "anniversary"],
+        "photo": "/bouquets/tender-grace.webp",
+        "wrapperId": "blush",
+        "items": [
+            {"flowerId": "white-calla", "quantity": 2},
+            {"flowerId": "pink-peony", "quantity": 4},
+            {"flowerId": "pink-tulip", "quantity": 2},
+            {"flowerId": "white-gypsophila", "quantity": 7},
+            {"flowerId": "eucalyptus", "quantity": 4}
+        ]
+    },
+    {
+        "id": "coral-breeze",
+        "name": "Кораловий бриз",
+        "description": "Енергійний прояв прихильності, який піднімає настрій",
+        "occasions": ["spring", "just-because", "birthday"],
+        "photo": "/bouquets/coral-breeze.webp",
+        "wrapperId": "none",
+        "items": [
+            {"flowerId": "red-tulip", "quantity": 6},
+            {"flowerId": "orange-tulip", "quantity": 3}
+        ]
+    },
+    {
+        "id": "sunny-contrast",
+        "name": "Сонячний контраст",
+        "description": "Виразний прояв щирої поваги та весняного тепла",
+        "occasions": ["spring", "congratulations", "birthday"],
+        "photo": "/bouquets/sunny-contrast.webp",
+        "wrapperId": "craft",
+        "items": [
+            {"flowerId": "yellow-tulip", "quantity": 10},
+            {"flowerId": "purple-tulip", "quantity": 9}
+        ]
+    },
+    {
+        "id": "pastel-whisper",
+        "name": "Пастельний шепіт",
+        "description": "Делікатний комплімент без зайвих слів, що огортає затишком",
+        "occasions": ["romance", "gratitude", "wedding"],
+        "photo": "/bouquets/pastel-whisper.webp",
+        "wrapperId": "blush",
+        "items": [
+            {"flowerId": "pink-rose", "quantity": 2},
+            {"flowerId": "pink-carnation", "quantity": 1},
+            {"flowerId": "white-eustoma", "quantity": 5},
+            {"flowerId": "white-gypsophila", "quantity": 3},
+            {"flowerId": "eucalyptus", "quantity": 2}
+        ]
+    },
+    {
+        "id": "white-quiet",
+        "name": "Біла тиша",
+        "description": "Спокійна впевненість у своїх емоціях і світла відданість",
+        "occasions": ["wedding", "gratitude", "romance"],
+        "photo": "/bouquets/white-quiet.webp",
+        "wrapperId": "white",
+        "items": [
+            {"flowerId": "white-rose", "quantity": 6},
+            {"flowerId": "white-gypsophila", "quantity": 3}
         ]
     }
 ]

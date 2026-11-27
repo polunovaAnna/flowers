@@ -22,6 +22,7 @@
 | `public/flowers/pink-eustoma.webp`     | solod_sha Content creator | https://www.pexels.com/photo/flowers-in-a-glass-of-champagne-7663741/                      | Pexels Lecense |
 | `public/flowers/yellow-daffodil.webp`  | Kristina Paukshtite       | https://www.pexels.com/photo/selective-photography-of-yellow-petaled-flower-983300/        | Pexels License |
 | `public/flowers/purple-tulip.webp`     | kokokara                  | https://www.pexels.com/photo/close-up-on-pink-tulip-flower-4164060/                        | Pexels License |
+| `public/flowers/white-eustoma.webp`    | Olya Prutskova            | https://www.pexels.com/photo/white-flower-with-green-leaves-8976496/                       | Pexels License |
 
 | Слайдери                      | Автор            | Джерело                                                                       | Ліцензія       |
 | ----------------------------- | :--------------- | ----------------------------------------------------------------------------- | -------------- |
@@ -29,12 +30,19 @@
 | `public/slider/slider-2.webp` | Berke Can        | https://www.pexels.com/photo/pink-petals-of-flower-15032689/                  | Pexels License |
 | `public/slider/slider-1.webp` | freestock.org    | https://www.pexels.com/photo/shallow-focus-photography-of-red-flowers-219294/ | Pexels License |
 
-| Букети                                | Автор             | Джерело                                                                                 | Ліцензія       |
-| ------------------------------------- | :---------------- | --------------------------------------------------------------------------------------- | -------------- |
-| `public/bouquets/classic-love.webp`   | Jonny Pinto       | https://www.pexels.com/photo/red-and-white-rose-bouquet-8549429/                        | Pexels License |
-| `public/bouquets/tender-morning.webp` | Valeriia Miller   | https://www.pexels.com/photo/pink-flower-bouquet-3392982/                               | Pexels License |
-| `public/bouquets/spring-sun.webp`     | Kader D. Kahraman | https://www.pexels.com/photo/woman-hands-on-bouquet-near-laptop-16536583/               | Pexels License |
-| `public/bouquets/sunny-trio.webp`     | Andreea Simion    | https://www.pexels.com/photo/close-up-photo-of-yellow-flowers-11462290/                 | Pexels License |
-| `public/bouquets/first-breath.webp`   | Rahime Gül        | https://www.pexels.com/photo/daffodils-and-cup-of-tea-19825969/                         | Pexels License |
-| `public/bouquets/silk-harmony.webp`   | Anna Khomutova    | https://www.pexels.com/photo/elegant-bridal-bouquet-with-roses-and-carnations-31046054/ | Pexels License |
-| `public/bouquets/velvet-evening.webp` | Melika Hazrati    | https://www.pexels.com/photo/bouquet-with-lisianthus-16649797/                          | Pexels License |
+| Букети                                    | Автор             | Джерело                                                                                 | Ліцензія       |
+| ----------------------------------------- | :---------------- | --------------------------------------------------------------------------------------- | -------------- |
+| `public/bouquets/classic-love.webp`       | Jonny Pinto       | https://www.pexels.com/photo/red-and-white-rose-bouquet-8549429/                        | Pexels License |
+| `public/bouquets/tender-morning.webp`     | Valeriia Miller   | https://www.pexels.com/photo/pink-flower-bouquet-3392982/                               | Pexels License |
+| `public/bouquets/spring-sun.webp`         | Kader D. Kahraman | https://www.pexels.com/photo/woman-hands-on-bouquet-near-laptop-16536583/               | Pexels License |
+| `public/bouquets/sunny-trio.webp`         | Andreea Simion    | https://www.pexels.com/photo/close-up-photo-of-yellow-flowers-11462290/                 | Pexels License |
+| `public/bouquets/first-breath.webp`       | Rahime Gül        | https://www.pexels.com/photo/daffodils-and-cup-of-tea-19825969/                         | Pexels License |
+| `public/bouquets/silk-harmony.webp`       | Anna Khomutova    | https://www.pexels.com/photo/elegant-bridal-bouquet-with-roses-and-carnations-31046054/ | Pexels License |
+| `public/bouquets/velvet-evening.webp`     | Melika Hazrati    | https://www.pexels.com/photo/bouquet-with-lisianthus-16649797/                          | Pexels License |
+| `public/bouquets/crimson-confession.webp` | Nadia Russu       | https://www.pexels.com/photo/red-tulips-in-vase-22027190/                               | Pexels License |
+| `public/bouquets/tender-grace.webp`       | Ssümçiğ           | https://www.pexels.com/photo/pink-and-white-flowers-bouquet-20744187/                   | Pexels License |
+| `public/bouquets/coral-breeze.webp`       | Əli Abasov        | https://www.pexels.com/photo/tulips-on-white-bedclothes-20550446/                       | Pexels License |
+| `public/bouquets/sunny-contrast.webp`     | Sirli Jung        | https://www.pexels.com/photo/yellow-and-purple-flower-bouquet-9684572/                  | Pexels License |
+| `public/bouquets/pastel-whisper.webp`     | Olena Bohovyk     | https://www.pexels.com/photo/a-person-holding-a-bouquet-of-flowers-11116449/            | Pexels License |
+| `public/bouquets/pearl-dawn.webp`         | wagamama.008/akko | https://www.pexels.com/photo/white-and-yellow-flowers-in-cloth-4344846/                 | Pexels License |
+| `public/bouquets/tender-blush.webp`       | Ayşe Sude         | https://www.pexels.com/photo/elegant-pink-flower-bouquet-with-carnations-31391575/      | Pexels License |

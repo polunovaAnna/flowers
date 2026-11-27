@@ -5,6 +5,7 @@ export const COLOR_LABELS = {
 	orange: "Помаранчевий",
 	yellow: "Жовтий",
 	green: "Зелений",
+	blue: "Синій",
 	purple: "Фіолетовий",
 };
 
@@ -15,6 +16,7 @@ export const COLOR_SWATCHES = {
 	orange: "#f08a3c",
 	yellow: "#f2cf4a",
 	green: "#6f9a4f",
+	blue: "#6ba5d6",
 	purple: "#8a5fb0",
 };
 

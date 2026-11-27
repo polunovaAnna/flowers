@@ -218,5 +218,16 @@
         "occasions": ["spring", "romance", "just-because"],
         "photo": "/flowers/purple-tulip.webp",
         "illustration": "/flowers_svg/purple-tulip.svg"
+    },
+    {
+        "id": "white-eustoma",
+        "name": "Біла еустома",
+        "type": "eustoma",
+        "color": "white",
+        "price": 70,
+        "meaning": "Ніжність, щирість, витончена краса",
+        "occasions": ["wedding", "gratitude", "romance"],
+        "photo": "/flowers/white-eustoma.webp",
+        "illustration": "/flowers_svg/white-eustoma.svg"
     }
 ]
