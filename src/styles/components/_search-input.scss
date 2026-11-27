@@ -10,6 +10,7 @@
     background: $color-surface;
     border: 1px solid $color-border;
     border-radius: $radius-sm;
+    height: $control-height;
     transition: border-color $transition-base;
 
     &:hover,

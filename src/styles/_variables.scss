@@ -47,6 +47,8 @@ $space-5: 32px;
 //size
 $header-height: 64px;
 $container-max: 1200px;
+$control-height: 44px;
+$toolbar-height: $control-height + $space-2 + $space-4;
 
 //breakpoint (синхронізувати з MOBILE_QUERY)
 $breakpoint-tablet: 768px;

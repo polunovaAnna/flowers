@@ -64,6 +64,7 @@
         background: $color-surface;
         border: 1px solid $color-border;
         border-radius: $radius-sm;
+        height: $control-height;
         cursor: pointer;
         transition: border-color $transition-base;
 
@@ -109,10 +110,25 @@
         &__filters {
             display: flex;
             flex: 0 0 220px;
+            position: sticky;
+            top: $toolbar-height;
+            max-height: calc(100dvh - #{$header-height + $toolbar-height + $space-4});
+            overflow-y: auto;
         }
 
         &__filters-toggle {
             display: none;
+        }
+
+        &__toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            align-items: flex-start;
+            height: $toolbar-height;
+            margin-bottom: 0;
+            padding-top: $space-2;
+            background: $color-bg;
         }
     }
 }
