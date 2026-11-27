@@ -131,7 +131,6 @@ export function FlowersPage() {
                         ))}
                     </FilterGroup>
                     <FilterGroup title="Ціна">
-                        <legend>Ціна</legend>
                         <PriceRange
                             bounds={priceBounds}
                             value={priceRange}

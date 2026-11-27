@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { useDebounce } from "./useDebounce";
 import { SEARCH_DEBOUNCE_MS, PRICE_DEBOUNCE_MS } from "../constants";
 
@@ -16,6 +16,15 @@ export function useFilteredList(
 	const [priceRange, setPriceRange] = useState({ min: "", max: "" });
 	const debouncedQuery = useDebounce(query, SEARCH_DEBOUNCE_MS);
 	const debouncedPriceRange = useDebounce(priceRange, PRICE_DEBOUNCE_MS);
+
+	const hasMounted = useRef(false);
+	useEffect(() => {
+		if (!hasMounted.current) {
+			hasMounted.current = true;
+			return;
+		}
+		onChange?.();
+	}, [debouncedQuery, debouncedPriceRange, onChange]);
 
 	const withNotify = (setter) => (value) => {
 		onChange?.();
@@ -77,12 +86,12 @@ export function useFilteredList(
 	return {
 		visibleItems,
 		query,
-		setQuery: withNotify(setQuery),
+		setQuery,
 		sortBy,
 		setSortBy: withNotify(setSortBy),
 		selected,
 		toggleFilter,
 		priceRange,
-		setPriceRange: withNotify(setPriceRange),
+		setPriceRange,
 	};
 }
