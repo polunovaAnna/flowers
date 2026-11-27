@@ -12,7 +12,7 @@ import { PriceSummary } from "../components/PriceSummary";
 import { Spinner } from "../components/Spinner";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { useFilteredList } from "../hooks/useFilteredList";
-import { PRICE_NAME_SORTERS } from "../utils/sorters";
+import { PRICE_NAME_SORTERS, byQuantityDesc } from "../utils/sorters";
 import { SearchInput } from "../components/SearchInput";
 import { ColorFilter } from "../components/ColorFilter";
 import { FilterGroup } from "../components/FilterGroup";
@@ -38,7 +38,17 @@ export function BuilderPage() {
     const wrapper = wrappers?.find((w) => w.id === builder.wrapperId) ?? null;
     const wrapperName = wrapper?.name ?? "Без обгортки";
 
-    const quantities = useMemo(() => Object.fromEntries(builder.items.map((i) => [i.flowerId, i.quantity])),[builder.items]);
+    const quantities = useMemo(() => Object.fromEntries(builder.items.map((i) => [i.flowerId, i.quantity])), [builder.items]);
+    
+    const usedFlowers = useMemo(() => {
+        if (!flowers) return [];
+        return flowers.filter((f) => (quantities[f.id] ?? 0) > 0).sort(byQuantityDesc(quantities));
+    }, [flowers, quantities]);
+
+    const availableFlowers = useMemo(
+        () => visibleItems.filter((f) => (quantities[f.id] ?? 0) === 0),
+        [visibleItems, quantities]
+    )
 
     const price = useMemo(() => {
         if (!flowers) return null;
@@ -66,6 +76,18 @@ export function BuilderPage() {
 
     if (isLoading) return <Spinner label="Готуємо конструктор..." />;
     if (error) return <ErrorMessage message={error.message} />;
+
+    const renderFlower = (flower) => (
+        <FlowerCard key={flower.id} flower={flower}>
+            <QuantityStepper
+                label={flower.name}
+                quantity={quantities[flower.id] ?? 0}
+                canAdd={builder.totalCount < MAX_FLOWERS}
+                onAdd={() => builder.addFlower(flower.id)}
+                onRemove={() => builder.removeFlower(flower.id)}
+            />
+        </FlowerCard>
+    );
 
     return (
         <section className="builder-page">
@@ -103,18 +125,12 @@ export function BuilderPage() {
                         </div>
                     )}
                     <div className="builder__flowers" aria-label="Квіти">
+                        {usedFlowers.map(renderFlower)}
+                        {usedFlowers.length > 0 && availableFlowers.length > 0 && (
+                            <p className="builder__divider">Додати ще</p>
+                        )}
+                        {availableFlowers.map(renderFlower)}
                         {visibleItems.length === 0 && <p>Нічого не знайдено</p>}
-                        {visibleItems.map((flower) => (
-                            <FlowerCard key={flower.id} flower={flower}>
-                                <QuantityStepper
-                                    label={flower.name}
-                                    quantity={quantities[flower.id] ?? 0}
-                                    canAdd={builder.totalCount < MAX_FLOWERS}
-                                    onAdd={() => builder.addFlower(flower.id)}
-                                    onRemove={() => builder.removeFlower(flower.id)}
-                                />
-                            </FlowerCard>
-                        ))}
                     </div>
                 </div>
                 <div className="builder__preview">

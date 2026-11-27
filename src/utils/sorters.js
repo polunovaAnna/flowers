@@ -12,3 +12,6 @@ export const SORT_OPTIONS = [
 	{ value: "price-asc", label: "Спочатку дешевші" },
 	{ value: "price-desc", label: "Спочатку дорожчі" },
 ];
+
+export const byQuantityDesc = (quantities) => (a, b) =>
+	quantities[b.id] - quantities[a.id];

@@ -126,6 +126,23 @@ $builder-thumb: 100px;
             }
         }
     }
+
+    &__divider {
+        display: flex;
+        align-items: center;
+        gap: $space-3;
+        margin: $space-2 0 0;
+        font-size: $text-sm;
+        color: $color-text-secondary;
+        
+        &::before,
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: $color-border;
+        }
+    }
 }
 
 @include mobile {
